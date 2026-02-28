@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Atomic Structure MCQ Quiz</title>
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f8ff;
+    padding:20px;
+}
+h1{
+    text-align:center;
+    color:#003366;
+}
+.question{
+    background:white;
+    padding:15px;
+    margin-bottom:15px;
+    border-radius:8px;
+    box-shadow:0 0 5px #ccc;
+}
+button{
+    padding:10px 20px;
+    font-size:16px;
+    background:#003366;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+button:hover{
+    background:#0055aa;
+}
+#result{
+    margin-top:20px;
+    padding:15px;
+    background:#e6ffe6;
+    border-radius:8px;
+    font-weight:bold;
+}
+.correct{
+    color:green;
+}
+.incorrect{
+    color:red;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Atomic Structure MCQ Quiz</h1>
+<p><b>Total Questions:</b> 25 | <b>Marks per Question:</b> 4 | <b>Total Marks:</b> 100</p>
+
+<form id="quizForm">
+
+<div id="quiz"></div>
+
+<button type="button" onclick="submitQuiz()">Submit Quiz</button>
+
+</form>
+
+<div id="result"></div>
+
+<script>
+
+const questions = [
+{
+q:"1. Millikan’s oil drop method is used to determine:",
+options:["Velocity of electron","Mass of electron","Charge of electron","e/m ratio of electron"],
+answer:2
+},
+{
+q:"2. Wavelength of spectral line emitted is inversely proportional to:",
+options:["Energy","Velocity","Radius","Quantum number"],
+answer:0
+},
+{
+q:"3. First use of quantum theory to explain structure of atom was made by:",
+options:["Heisenberg","Bohr","Planck","Einstein"],
+answer:1
+},
+{
+q:"4. Packet of energy is called:",
+options:["Proton","Photon","Positron","Electron"],
+answer:1
+},
+{
+q:"5. Colourless aqueous solution is formed by:",
+options:["Fe²⁺","Cr³⁺","Mn²⁺","Zn²⁺"],
+answer:3
+},
+{
+q:"6. Incorrect configuration is:",
+options:["K = [Ar] 4s¹","Cr = [Ar] 3d⁵ 4s¹","Cr = [Ar] 3d⁴ 4s²","Cu = [Ar] 3d¹⁰ 4s¹"],
+answer:2
+},
+{
+q:"7. Least electrons in M shell:",
+options:["Mn","Ni","K","Sc"],
+answer:2
+},
+{
+q:"8. Angular momentum zero in orbital:",
+options:["2p","2s","3d","4f"],
+answer:1
+},
+{
+q:"9. Electronic configuration of Chromium:",
+options:["[Ne] 3s² 3p⁶ 3d⁴ 4s²","[Ne] 3s² 3p⁶ 3d² 4s¹","[Ne] 3s² 3p⁶ 3d⁵ 4s¹","[Ne] 3s² 3p⁶ 4s² 3d⁴"],
+answer:2
+},
+{
+q:"10. Correct set of quantum numbers:",
+options:["n=2,l=1,m=-2,s=0","n=2,l=-2,m=1,s=+½","n=2,l=2,m=-1,s=-½","n=2,l=1,m=0,s=+½"],
+answer:3
+},
+{
+q:"11. Valence electron n=4,l=0,m=0,s=+½ element:",
+options:["Ti","K","Na","Sc"],
+answer:1
+},
+{
+q:"12. Isoelectronic species:",
+options:["H₂, CO₂, CN⁻, O⁻","N, H₂S, CO","N₂, CO, CN⁻, O₂²⁺","Ca, Mg, Cl"],
+answer:2
+},
+{
+q:"13. Number of orbitals in L level:",
+options:["1","2","3","4"],
+answer:3
+},
+{
+q:"14. Ratio of radii (n=2/n=1):",
+options:["2","4","3","4"],
+answer:1
+},
+{
+q:"15. Dual nature of particle given by:",
+options:["Bohr theory","Thomson model","Heisenberg principle","De Broglie equation"],
+answer:3
+},
+{
+q:"16. Outermost configuration of most electronegative element:",
+options:["ns² np⁵","ns² np⁶","ns² np⁴","ns² np⁶"],
+answer:0
+},
+{
+q:"17. Electron probability function D:",
+options:["4πr dr ψ²","4πr² dr ψ","4πr² dr ψ²","4πr dr ψ"],
+answer:2
+},
+{
+q:"18. Total energy in first orbit:",
+options:["–e²/2r","–e²/r","–e²/μ²","–e²/2r²"],
+answer:0
+},
+{
+q:"19. Quantum numbers defined on basis of:",
+options:["Aufbau principle","Heisenberg uncertainty","Hund’s rule","Pauli exclusion principle"],
+answer:3
+},
+{
+q:"20. Number of waves in 3rd orbit:",
+options:["1","2","3","4"],
+answer:2
+},
+{
+q:"21. Does not travel with speed of light:",
+options:["De Broglie waves","X-rays","Gamma rays","All of these"],
+answer:0
+},
+{
+q:"22. Electrons in one p-orbital:",
+options:["6","2","4","None"],
+answer:1
+},
+{
+q:"23. Quantum number m associated with:",
+options:["Volume","Shape","Orientation","Energy"],
+answer:2
+},
+{
+q:"24. 13 electrons in M shell:",
+options:["Copper","Iron","Nickel","Chromium"],
+answer:1
+},
+{
+q:"25. Same magnetic moment:",
+options:["Cu²⁺, Ti³⁺","Ti³⁺, Ni²⁺","Ti⁴⁺, Cu²⁺","Mn²⁺, Cu²⁺"],
+answer:0
+}
+];
+
+const quizDiv = document.getElementById("quiz");
+
+questions.forEach((item,index)=>{
+    let div=document.createElement("div");
+    div.classList.add("question");
+    div.innerHTML=`<p>${item.q}</p>`;
+    item.options.forEach((opt,i)=>{
+        div.innerHTML+=`
+        <label>
+        <input type="radio" name="q${index}" value="${i}">
+        ${opt}
+        </label><br>`;
+    });
+    quizDiv.appendChild(div);
+});
+
+function submitQuiz(){
+    let score=0;
+    let resultHTML="";
+    
+    questions.forEach((item,index)=>{
+        let selected=document.querySelector(`input[name="q${index}"]:checked`);
+        
+        if(selected){
+            if(parseInt(selected.value)===item.answer){
+                score+=4;
+                resultHTML+=`<p class="correct">Q${index+1}: Correct ✔</p>`;
+            }else{
+                resultHTML+=`<p class="incorrect">Q${index+1}: Incorrect ✘ (Correct: ${item.options[item.answer]})</p>`;
+            }
+        }else{
+            resultHTML+=`<p class="incorrect">Q${index+1}: Not Attempted ✘ (Correct: ${item.options[item.answer]})</p>`;
+        }
+    });
+
+    resultHTML+=`<h2>Total Score: ${score} / 100</h2>`;
+    document.getElementById("result").innerHTML=resultHTML;
+}
+
+</script>
+
+</body>
+</html>
