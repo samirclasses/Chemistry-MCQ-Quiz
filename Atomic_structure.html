@@ -334,26 +334,38 @@ questions.forEach((item,index)=>{
 });
 
 function submitQuiz(){
-    let score=0;
-    let resultHTML="";
-    
+    let score = 0;
+
     questions.forEach((item,index)=>{
-        let selected=document.querySelector(`input[name="q${index}"]:checked`);
-        
-        if(selected){
-            if(parseInt(selected.value)===item.answer){
-                score+=4;
-                resultHTML+=`<p class="correct">Q${index+1}: Correct ✔</p>`;
-            }else{
-                resultHTML+=`<p class="incorrect">Q${index+1}: Incorrect ✘ (Correct: ${item.options[item.answer]})</p>`;
+
+        let selected = document.querySelector(`input[name="q${index}"]:checked`);
+        let options = document.querySelectorAll(`input[name="q${index}"]`);
+
+        options.forEach((opt,i)=>{
+
+            let label = opt.parentElement;
+
+            if(i === item.answer){
+                label.style.color = "green";
+                label.style.fontWeight = "bold";
             }
-        }else{
-            resultHTML+=`<p class="incorrect">Q${index+1}: Not Attempted ✘ (Correct: ${item.options[item.answer]})</p>`;
+
+            if(selected && parseInt(selected.value) !== item.answer && opt.checked){
+                label.style.color = "red";
+                label.style.fontWeight = "bold";
+            }
+
+            opt.disabled = true; // disable after submit
+        });
+
+        if(selected && parseInt(selected.value) === item.answer){
+            score += 4;
         }
+
     });
 
-    resultHTML+=`<h2>Total Score: ${score} / 100</h2>`;
-    document.getElementById("result").innerHTML=resultHTML;
+    document.getElementById("result").innerHTML =
+        `<h2>Total Score: ${score} / 200</h2>`;
 }
 
 </script>
