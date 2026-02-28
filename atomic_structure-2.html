@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Atomic Structure Quiz – Set 2</title>
+<style>
+body{
+    font-family: Arial;
+    background:#f4f8ff;
+    padding:20px;
+}
+h1{
+    text-align:center;
+    color:#003366;
+}
+.question{
+    background:white;
+    padding:15px;
+    margin-bottom:15px;
+    border-radius:8px;
+    box-shadow:0 0 5px #ccc;
+}
+button{
+    padding:10px 20px;
+    font-size:16px;
+    background:#003366;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+button:hover{
+    background:#0055aa;
+}
+#result{
+    margin-top:20px;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Atomic Structure MCQ Quiz – Set 2</h1>
+<p><b>Total Questions:</b> 50 | <b>Marks per Question:</b> 4 | <b>Total Marks:</b> 200</p>
+
+<form id="quizForm">
+<div id="quiz"></div>
+<button type="button" onclick="submitQuiz()">Submit Quiz</button>
+</form>
+
+<div id="result"></div>
+
+<script>
+
+const questions = [
+
+{q:"1. The maximum number of 3d electrons having s = +½ are:",
+options:["10","5","14","7"],answer:1},
+
+{q:"2. The fourth electron of Be atom will have quantum numbers:",
+options:["1,0,0,+½","2,0,0,–½","2,1,0,+½","1,1,1,+½"],answer:1},
+
+{q:"3. The electron density between 1s and 2s orbital is:",
+options:["High","Low","Zero","None"],answer:2},
+
+{q:"4. A p-orbital can accommodate upto:",
+options:["Six electrons","Four electrons","Two electrons with opposite spins","Two electrons with parallel spins"],answer:2},
+
+{q:"5. Energy of radiation of wavelength 2000 Å (ergs):",
+options:["9.92 × 10⁻¹⁹","9.94 × 10⁻¹²","4.97 × 10⁻¹²","4.97 × 10⁻¹⁹"],answer:0},
+
+{q:"6. De Broglie wavelength of electron in ground state of H atom:",
+options:["33.28 nm","3.328 nm","0.3328 nm","0.0332 nm"],answer:2},
+
+{q:"7. Uncertainty in velocity (ms⁻¹):",
+options:["2.1 × 10⁻²⁸","2.1 × 10⁻³⁴","0.5 × 10⁻³⁴","5.0 × 10⁻²⁴"],answer:0},
+
+{q:"8. Electrons in Cs⁺ (s,p,d respectively):",
+options:["12,20,22","8,22,24","10,24,20","8,26,10"],answer:2},
+
+{q:"9. Energy in second excited state of H:",
+options:["−6.8 eV","−3.4 eV","−1.51 eV","−4.53 eV"],answer:2},
+
+{q:"10. De Broglie wavelength of tennis ball:",
+options:["10⁻³³ m","10⁻³¹ m","10⁻¹⁶ m","10⁻²⁵ m"],answer:3},
+
+{q:"11. Energy relation (8000Å &16000Å):",
+options:["E₁=2E₂","E₁=4E₂","E₁=6E₂","E₁=E₂"],answer:0},
+
+{q:"12. M-shell electrons order:",
+options:["Z>Y>X","X>Y>Z","Z>X>Y","Y>Z>X"],answer:0},
+
+{q:"13. Circumference of 4th orbit:",
+options:["2λ","2/λ","3λ","4λ"],answer:3},
+
+{q:"14. Correct order of unpaired electrons:",
+options:["Cu²⁺>Ni²⁺>Cr³⁺>Fe³⁺","Ni²⁺>Cu²⁺>Fe³⁺>Cr³⁺","Fe³⁺>Cr³⁺>Ni²⁺>Cu²⁺","Fe³⁺>Cr³⁺>Cu²⁺>Ni²⁺"],answer:2},
+
+{q:"15. Magnetic moment of Mn²⁺:",
+options:["6.9","5.9","4.9","3.0"],answer:1},
+
+{q:"16. Magnetic moment of Cu²⁺:",
+options:["2.6","2.76","1.73","0"],answer:2},
+
+{q:"17. Correct quantum numbers for 4f:",
+options:["4,3,+4,+½","4,4,−4,−½","4,3,+1,+½","3,2,−2,+½"],answer:2},
+
+{q:"18. Energy ratio (3000Å &6000Å):",
+options:["1:1","2:1","1:2","1:4"],answer:1},
+
+{q:"19. Orbital angular momentum of s electron:",
+options:["+½ h/2π","Zero","h/2π","√2 h/2π"],answer:1},
+
+{q:"20. De Broglie wavelength:",
+options:["6.63×10⁻⁷","6.63×10⁻¹⁶","6.63×10⁻²²","6.63×10⁻²⁹"],answer:3},
+
+{q:"21. Isoelectronic species:",
+options:["Na⁺,Ca²⁺,Mg²⁺","N³⁻,F⁻,Na⁺","Be,Al³⁺,Cl⁻","Ca²⁺,Cs⁺,Br"],answer:1},
+
+{q:"22. Velocity in 2nd shell:",
+options:["10.94×10⁶","18.88×10⁶","1.888×10⁶","1.094×10⁶"],answer:2},
+
+{q:"23. Electrons (l=1 & l=2) in Cr:",
+options:["12 & 4","12 & 5","16 & 4","16 & 5"],answer:1},
+
+{q:"24. 1s⁷ not observed because:",
+options:["Heisenberg","Hund","Pauli","Bohr"],answer:2},
+
+{q:"25. Radial nodes in 3s &2p:",
+options:["0,2","2,0","2,1","1,2"],answer:1},
+
+{q:"26. Same radius as 1st Bohr orbit:",
+options:["He⁺(2)","Li²⁺(2)","Li²⁺(3)","Be³⁺(2)"],answer:0},
+
+{q:"27. Wavelength of golf ball:",
+options:["10⁻¹⁰","10⁻²⁰","10⁻³⁰","10⁻⁴⁰"],answer:3},
+
+{q:"28. Ground state N:",
+options:["1 only","1,2","1,4","2,3"],answer:0},
+
+{q:"29. Correct statements:",
+options:["1,2,3","2,3,4","3,4","1,2,4"],answer:3},
+
+{q:"30. Orbital angular momentum for d-electron:",
+options:["√6 ħ","√2 ħ","ħ","2 ħ"],answer:0},
+
+{q:"31. Orbital angular momentum in 2s:",
+options:["+½(h/2π)","Zero","h/2π","√2(h/2π)"],answer:1},
+
+{q:"32. Velocity of electron accelerated by V:",
+options:["√(V/m)","√(eV/m)","√(2eV/m)","None"],answer:2},
+
+{q:"33. Empirical formula:",
+options:["AB","AB₃","A₃B₃","A₂B₆"],answer:1},
+
+{q:"34. Radius of nucleus:",
+options:["10⁻⁸ cm","10⁻¹³ cm","10⁻¹⁰ cm","10⁻¹⁵ cm"],answer:1},
+
+{q:"35. Bohr model explains:",
+options:["Solar spectrum","H₂ spectrum","Hydrogen atom only","One-electron species"],answer:3},
+
+{q:"36. Level allowing absorption not emission:",
+options:["1s","2s","2p","3s"],answer:0},
+
+{q:"37. Valence quantum numbers of Rb:",
+options:["5,0,0,±½","6,0,0,±½","5,1,1,±½","5,1,0,±½"],answer:0},
+
+{q:"38. Increasing order e/m:",
+options:["n,p,α,e","n,p,e,α","n,α,p,e","e,p,n,α"],answer:2},
+
+{q:"39. Ionization energy of He⁺:",
+options:["13.6","54.4","122.4","Zero"],answer:1},
+
+{q:"40. Specific charge relation:",
+options:["S₁=S₂","S₁<S₂","S₁>S₂","None"],answer:2},
+
+{q:"41. Total spin in Ni²⁺:",
+options:["±5/2","±3/2","±1/2","±1"],answer:2},
+
+{q:"42. Aufbau violation:",
+options:["a","b","c","d"],answer:1},
+
+{q:"43. Nodal spheres:",
+options:["1","2","3","4"],answer:1},
+
+{q:"44. Shortest wavelength (2→1):",
+options:["Li²⁺","D","He⁺","H"],answer:0},
+
+{q:"45. Speed vs n curve:",
+options:["D","C","B","A"],answer:3},
+
+{q:"46. Spin of electron is:",
+options:["Rotation about axis","Clockwise/anticlockwise","Intrinsic characteristic","Depends on speed"],answer:2},
+
+{q:"47. ψ² of s-orbital does not depend on:",
+options:["Azimuthal number","Energy","Principal number","Distance r"],answer:0},
+
+{q:"48. 2pₓ orbital lobes mean:",
+options:["High at x>0","High at nucleus","High at x<0 but zero in yz plane","Both (a) & (c)"],answer:3},
+
+{q:"49. De Broglie wavelength in 5th orbit:",
+options:["20 r₀","(10π) r₀","5π r₀","15π r₀"],answer:2},
+
+{q:"50. Bohr orbit condition:",
+options:["nλ = 2πr","2πr = nλ","λ = nr","None"],answer:1}
+
+];
+
+const quizDiv=document.getElementById("quiz");
+
+questions.forEach((item,index)=>{
+let div=document.createElement("div");
+div.classList.add("question");
+div.innerHTML=`<p>${item.q}</p>`;
+item.options.forEach((opt,i)=>{
+div.innerHTML+=`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label><br>`;
+});
+quizDiv.appendChild(div);
+});
+
+function submitQuiz(){
+let score=0;
+questions.forEach((item,index)=>{
+let selected=document.querySelector(`input[name="q${index}"]:checked`);
+let options=document.querySelectorAll(`input[name="q${index}"]`);
+options.forEach((opt,i)=>{
+let label=opt.parentElement;
+if(i===item.answer){
+label.style.color="green";
+label.style.fontWeight="bold";
+}
+if(selected && parseInt(selected.value)!==item.answer && opt.checked){
+label.style.color="red";
+label.style.fontWeight="bold";
+}
+opt.disabled=true;
+});
+if(selected && parseInt(selected.value)===item.answer){
+score+=4;
+}
+});
+document.getElementById("result").innerHTML=`<h2>Total Score: ${score} / 200</h2>`;
+}
+
+</script>
+
+</body>
+</html>
