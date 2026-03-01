@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <title>Atomic Structure MCQ Quiz</title>
 <style>
+    .correct {
+  color: green;
+  font-weight: bold;
+}
+
+.incorrect {
+  color: red;
+  font-weight: bold;
+}
 body{
     font-family: Arial, sans-serif;
     background:#f4f6f9;
@@ -192,7 +201,17 @@ function submitQuiz(){
      Incorrect: ${questions.length-score} <br>
      Score: ${(score/questions.length*100).toFixed(2)}%`;
 }
-
+function checkAnswer(selected, correct, elementId) {
+  const result = document.getElementById(elementId);
+  
+  if (selected === correct) {
+    result.innerHTML = "Correct Answer ✔";
+    result.className = "correct";
+  } else {
+    result.innerHTML = "Incorrect Answer ✘";
+    result.className = "incorrect";
+  }
+}
 </script>
 
 </body>
