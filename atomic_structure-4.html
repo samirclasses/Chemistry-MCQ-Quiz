@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assertion-Reason MCQ Quiz</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f6f9;
+    padding:20px;
+}
+
+h2{
+    text-align:center;
+}
+
+.question{
+    background:white;
+    padding:15px;
+    margin-bottom:15px;
+    border-radius:8px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+.options label{
+    display:block;
+    padding:5px;
+    cursor:pointer;
+}
+
+.correct{
+    background:#c8f7c5;
+}
+
+.wrong{
+    background:#f7c5c5;
+}
+
+button{
+    padding:10px 20px;
+    font-size:16px;
+    border:none;
+    border-radius:5px;
+    background:#007bff;
+    color:white;
+    cursor:pointer;
+}
+
+#result{
+    font-size:18px;
+    font-weight:bold;
+    margin-top:20px;
+}
+</style>
+</head>
+<body>
+
+<h2>Assertion–Reason MCQ Quiz</h2>
+
+<p><b>Options for all questions:</b><br>
+(a) A and R both correct; R is the correct explanation of A<br>
+(b) A and R both correct; R is NOT the correct explanation of A<br>
+(c) A is true but R is false<br>
+(d) A is false but R is true<br>
+(e) A and R both are false
+</p>
+
+<form id="quizForm">
+
+<!-- Answer Key -->
+<script>
+const answers = {
+1:"b", 2:"c", 3:"b", 4:"a", 5:"e",
+6:"a", 7:"a", 8:"c", 9:"a", 10:"a",
+11:"b", 12:"e", 13:"a", 14:"a", 15:"c",
+16:"d", 17:"d", 18:"a", 19:"c", 20:"a"
+};
+</script>
+
+<div id="questions"></div>
+
+<button type="button" onclick="submitQuiz()">Submit</button>
+
+</form>
+
+<div id="result"></div>
+
+<script>
+
+const questionData = [
+
+`Cu²⁺ is a coloured ion.<br>
+Every ion with unpaired electron is coloured.`,
+
+`For n = 3, l may be 0, 1 and 2 and m may be 0; 0±1; 0, ±1 and ±2.<br>
+For each value of n, there are 0 to (n–1) possible values of l; and for each value of l, there are 0 to ±l values of m.`,
+
+`The kinetic energy of photoelectrons increases with increase in frequency of incident light.<br>
+The number of photoelectrons ejected increases with increase in intensity of light.`,
+
+`Half-filled and fully-filled degenerate orbitals are more stable.<br>
+Extra stability is due to the symmetry of degenerate orbitals.`,
+
+`A spectral line will be observed for a 2px – 2py transition.<br>
+Energy is released when electron drops from 2px to 2py.`,
+
+`Limiting line in the Balmer series has wavelength 364.4 nm.<br>
+Limiting line is for transition n = ∞ to n = 2.`,
+
+`Electron can have same wavelength as proton if Ve = 1836 Vp.<br>
+Electron mass is 1/1836 of proton.`,
+
+`Electrons are negatively charged.<br>
+Cathode rays deflect towards cathode.`,
+
+`Shortest wavelength of Lyman series is for n = ∞ to n = 1.<br>
+hc/λ = ΔE.`,
+
+`On heating solid long enough, radiations become white then blue.<br>
+Frequency increases with temperature.`,
+
+`Paramagnetism of Cu⁺ is zero.<br>
+μ = √S(S+1)`,
+
+`3dz² orbital is spherical.<br>
+It is the only spherical d-orbital.`,
+
+`Electronic configuration of K is 1s²2s²2p⁶3s²3p⁶4s¹.<br>
+4s fills before 3d.`,
+
+`Nitrogen configuration is 1s²2s²2p³ with ↑↑↑.<br>
+Ground state has greatest multiplicity.`,
+
+`Fe²⁺ has configuration like Cr.<br>
+Five unpaired electrons give stability.`,
+
+`Atoms can neither be created nor destroyed.<br>
+Equal volumes of gases do not contain equal atoms.`,
+
+`Kinetic energy increases with intensity.<br>
+Intensity increases emission rate.`,
+
+`Orbital shapes shown by boundary surface diagrams.<br>
+They help visualize atomic orbitals.`,
+
+`Fluorescence is emission of absorbed light.<br>
+It continues long after source removed.`,
+
+`Angular momentum of d-orbital is √6 h/2π.<br>
+d orbitals are double dumb-bell except dz².`
+
+];
+
+const options = {
+a:"A and R both correct; R is the correct explanation of A",
+b:"A and R both correct; R is NOT the correct explanation of A",
+c:"A is true but R is false",
+d:"A is false but R is true",
+e:"A and R both are false"
+};
+
+const container = document.getElementById("questions");
+
+questionData.forEach((q,i)=>{
+    let div = document.createElement("div");
+    div.className="question";
+    div.innerHTML = `<b>Q${i+1}.</b> (A): ${q.split("<br>")[0]}<br>
+                     (R): ${q.split("<br>")[1]}<div class="options" id="opt${i+1}"></div>`;
+    container.appendChild(div);
+
+    for(let key in options){
+        document.getElementById(`opt${i+1}`).innerHTML +=
+        `<label><input type="radio" name="q${i+1}" value="${key}"> (${key}) ${options[key]}</label>`;
+    }
+});
+
+function submitQuiz(){
+    let score=0;
+    for(let i=1;i<=20;i++){
+        let selected = document.querySelector(`input[name="q${i}"]:checked`);
+        let labels = document.querySelectorAll(`#opt${i} label`);
+        labels.forEach(l=>l.classList.remove("correct","wrong"));
+
+        if(selected){
+            if(selected.value===answers[i]){
+                score++;
+                selected.parentElement.classList.add("correct");
+            }else{
+                selected.parentElement.classList.add("wrong");
+                labels.forEach(l=>{
+                    if(l.querySelector("input").value===answers[i]){
+                        l.classList.add("correct");
+                    }
+                });
+            }
+        }
+    }
+    document.getElementById("result").innerHTML = 
+    "Your Score: "+score+" / 20";
+}
+
+</script>
+
+</body>
+</html>
