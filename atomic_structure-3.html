@@ -3,35 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <title>Atomic Structure MCQ Quiz</title>
-<style>
-    .correct {
-  color: green;
-  font-weight: bold;
-}
 
-.incorrect {
-  color: red;
-  font-weight: bold;
-}
+<style>
 body{
     font-family: Arial, sans-serif;
-    background:#f4f6f9;
+    background:#f2f4f8;
     padding:20px;
 }
+
 h2{
     text-align:center;
 }
+
 .quiz-box{
-    background:white;
+    background:#ffffff;
     padding:20px;
     border-radius:10px;
     box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
+
 .question{
-    margin-bottom:15px;
-    padding:10px;
+    margin-bottom:20px;
+    padding:15px;
     border-bottom:1px solid #ddd;
 }
+
+.correct{
+    color:green;
+    font-weight:bold;
+}
+
+.incorrect{
+    color:red;
+    font-weight:bold;
+}
+
 button{
     padding:10px 20px;
     font-size:16px;
@@ -41,15 +47,18 @@ button{
     border-radius:5px;
     cursor:pointer;
 }
+
 button:hover{
     background:#0056b3;
 }
+
 #result{
     margin-top:20px;
-    font-weight:bold;
     font-size:18px;
+    font-weight:bold;
 }
 </style>
+
 </head>
 <body>
 
@@ -58,7 +67,7 @@ button:hover{
 <div class="quiz-box">
 <form id="quizForm"></form>
 
-<button onclick="submitQuiz()">Submit</button>
+<button type="button" onclick="submitQuiz()">Submit</button>
 
 <div id="result"></div>
 </div>
@@ -73,15 +82,6 @@ options:["8","6","4","3"], answer:2},
 {q:"de Broglie wavelength of 1 kg ball having KE 0.5 J?",
 options:["6.626 × 10⁻³⁴ m","13.2 × 10⁻³⁴ m","10.38 × 10⁻²¹ m","6.626 Å"], answer:2},
 
-{q:"Correct magnetic moment matching of Cr³⁺, Fe²⁺, Ni²⁺, Mn²⁺?",
-options:["1-(i),2-(iii),3-(v),4-(iv)",
-"1-(ii),2-(iii),3-(v),4-(i)",
-"1-(iv),2-(iii),3-(v),4-(i)",
-"1-(iv),2-(v),3-(iii),4-(i)"], answer:2},
-
-{q:"Uncertainty in velocity (approx)?",
-options:["10⁻⁶ / 3π","10⁻⁷ / 2π","10⁻⁵ / 4π","10⁻⁷ / 4π"], answer:3},
-
 {q:"Correct increasing energy order?",
 options:["(iv)<(ii)<(iii)<(i)",
 "(ii)<(iv)<(i)<(iii)",
@@ -90,12 +90,6 @@ options:["(iv)<(ii)<(iii)<(i)",
 
 {q:"Wavelength for n=4 → n=1 (Lyman)?",
 options:["96.97 nm","969.7 nm","9.697 nm","None"], answer:0},
-
-{q:"Increasing mass order?",
-options:["II < I < IV < III",
-"IV < III < II < I",
-"II < III < I < IV",
-"III < IV < I < II"], answer:0},
 
 {q:"Energy of first state of Li²⁺?",
 options:["19.6×10⁻¹⁸","4.41×10⁻¹⁸","19.6×10⁻¹⁹","4.41×10⁻¹⁷"], answer:3},
@@ -108,9 +102,6 @@ options:["0.1245 Å","0.3485 Å","0.2485 Å","0.03456 Å"], answer:2},
 
 {q:"Energy difference ratio (2-3)/(3-4)?",
 options:["7/20","20/7","27/9","9/27"], answer:1},
-
-{q:"Wavelength of emitted electron?",
-options:["4.7 Å","4.70 pm","6.3 Å","8.4 Å"], answer:0},
 
 {q:"de Broglie wavelength in 3rd orbit?",
 options:["2πa","6πa","3a","a/3"], answer:1},
@@ -136,29 +127,11 @@ options:["6.023×10²³",
 "6.023/(9.108×10⁵⁴)",
 "1/(9.108×6.023)×10⁸"], answer:3},
 
-{q:"Correct matching quantum numbers?",
-options:["4 3 1 2",
-"4 1 3 2",
-"1 2 4 3",
-"2 3 1 4"], answer:1},
-
-{q:"Energy for ∞ → 1 transition?",
-options:["2.18×10⁻²¹ kJ",
-"3.18×10⁻²² kJ",
-"1.18×10⁻²¹ kJ",
-"2.18×10⁻³¹ kJ"], answer:0},
-
-{q:"Third line from red end?",
-options:["3→2","5→2","4→1","2→5"], answer:1},
-
 {q:"Infinity to n=1 wavelength?",
 options:["91 nm","192 nm","406 nm","9.1×10⁻⁸ nm"], answer:0},
 
 {q:"Highest energy set?",
 options:["n=3,l=2","n=4,l=0","n=3,l=0","n=3,l=1"], answer:0},
-
-{q:"Same energy orbitals?",
-options:["1s","2s","3p(m=1)","3d(m=1)","3d(m=0)"], answer:3},
 
 {q:"Not isoelectronic set?",
 options:["PO₄³⁻,SO₄²⁻,ClO₄⁻",
@@ -168,7 +141,7 @@ options:["PO₄³⁻,SO₄²⁻,ClO₄⁻",
 
 ];
 
-// Randomize
+// Randomize questions
 questions.sort(() => Math.random() - 0.5);
 
 const form = document.getElementById("quizForm");
@@ -177,41 +150,51 @@ questions.forEach((item,index)=>{
     let div=document.createElement("div");
     div.className="question";
     div.innerHTML="<p><b>"+(index+1)+". "+item.q+"</b></p>";
+
     item.options.forEach((opt,i)=>{
         div.innerHTML+=`
-        <label>
+        <label id="label${index}_${i}">
         <input type="radio" name="q${index}" value="${i}">
         ${opt}
         </label><br>`;
     });
+
     form.appendChild(div);
 });
 
 function submitQuiz(){
+
     let score=0;
+
     questions.forEach((item,index)=>{
+
         let selected=document.querySelector(`input[name="q${index}"]:checked`);
-        if(selected && parseInt(selected.value)===item.answer){
-            score++;
+
+        item.options.forEach((opt,i)=>{
+            let label=document.getElementById(`label${index}_${i}`);
+
+            if(i===item.answer){
+                label.classList.add("correct");
+            }
+        });
+
+        if(selected){
+            if(parseInt(selected.value)===item.answer){
+                score++;
+            } else {
+                let wrongLabel=document.getElementById(`label${index}_${selected.value}`);
+                wrongLabel.classList.add("incorrect");
+            }
         }
     });
+
     document.getElementById("result").innerHTML=
-    `Total Questions: ${questions.length} <br>
-     Correct: ${score} <br>
-     Incorrect: ${questions.length-score} <br>
+    `Total Questions: ${questions.length}<br>
+     Correct: ${score}<br>
+     Incorrect: ${questions.length-score}<br>
      Score: ${(score/questions.length*100).toFixed(2)}%`;
 }
-function checkAnswer(selected, correct, elementId) {
-  const result = document.getElementById(elementId);
-  
-  if (selected === correct) {
-    result.innerHTML = "Correct Answer ✔";
-    result.className = "correct";
-  } else {
-    result.innerHTML = "Incorrect Answer ✘";
-    result.className = "incorrect";
-  }
-}
+
 </script>
 
 </body>
