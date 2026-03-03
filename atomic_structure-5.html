@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Structure of Atoms - Previous Years MCQ Quiz</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f6f9;
+    padding:20px;
+}
+.container{
+    max-width:900px;
+    margin:auto;
+    background:#ffffff;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+h1{
+    text-align:center;
+    color:#2c3e50;
+}
+.question{
+    margin-bottom:20px;
+    padding:15px;
+    background:#f9fbff;
+    border-left:5px solid #3498db;
+    border-radius:5px;
+}
+button{
+    padding:10px 20px;
+    background:#2ecc71;
+    border:none;
+    color:white;
+    font-size:16px;
+    border-radius:5px;
+    cursor:pointer;
+}
+button:hover{
+    background:#27ae60;
+}
+.result{
+    margin-top:20px;
+    font-size:18px;
+    font-weight:bold;
+}
+.correct{color:green;}
+.wrong{color:red;}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+<h1>Structure of Atoms – MCQ Quiz</h1>
+
+<form id="quizForm">
+
+<!-- QUESTIONS -->
+
+<script>
+const questions = [
+{q:"1. Set of isoelectronic species is:",
+o:["H2, CO2, CN⁻, O⁻","N, H2S, CO","N2, CO, CN⁻, O2²⁺","Ca, Mg, Cl"],a:2},
+{q:"2. Wavelength of photon when ΔE = 3.03×10⁻¹⁹ J:",
+o:["6.56 nm","65.6 nm","656 nm","0.656 nm"],a:2},
+{q:"3. Which forms colourless solution in aqueous medium?",
+o:["V³⁺","Cr³⁺","Ti³⁺","Sc³⁺"],a:3},
+{q:"4. Quantum numbers n=3,l=2,m=+2 possible for how many orbitals?",
+o:["1","2","3","4"],a:1},
+{q:"5. Which is isoelectronic?",
+o:["CO2 & NO2","NO2⁻ & CO2","CN⁻ & CO","SO2 & CO2"],a:2},
+{q:"6. Kinetic energy of first excited state of H atom:",
+o:["+3.4 eV","+6.8 eV","-13.6 eV","+13.6 eV"],a:0},
+{q:"7. Ionic radii order (O²⁻, F⁻, Na⁺, Mg²⁺, Al³⁺):",
+o:["Increase then decrease","Decrease then increase","Significant increase","Significant decrease"],a:3},
+{q:"8. Wavelength (ν=8×10¹⁵ s⁻¹):",
+o:["4×10¹ nm","3×10⁷ nm","2×10⁻²⁵ nm","5×10¹⁸ nm"],a:0},
+{q:"9. Ion with 3d² configuration:",
+o:["Ti³⁺","V⁴⁺","Cr³⁺","Ti²⁺"],a:3},
+{q:"10. Frequency emitted (n=4 to n=1):",
+o:["1.54×10¹⁵ s⁻¹","1.03×10¹⁵ s⁻¹","3.08×10¹⁵ s⁻¹","2×10¹⁵ s⁻¹"],a:2},
+{q:"11. Energy of 4th Bohr orbit:",
+o:["-164 kJ/mol","-41 kJ/mol","-82 kJ/mol","-1312 kJ/mol"],a:2},
+{q:"12. Orientation of orbital governed by:",
+o:["Magnetic quantum number","Principal quantum number","Azimuthal quantum number","Spin quantum number"],a:0},
+{q:"13. Uncertainty in velocity:",
+o:["5.79×10⁵ m/s","5.79×10⁴ m/s","5.79×10⁶ m/s","5.79×10⁷ m/s"],a:2},
+{q:"14. Both ions coloured:",
+o:["Sc³⁺, Co²⁺","Ni²⁺, Cu⁺","Ni²⁺, Ti³⁺","Sc³⁺, Ti³⁺"],a:2},
+{q:"15. Impossible quantum number set:",
+o:["2,3,4","1,2,3,4","2,4,5","1 and 3"],a:2},
+{q:"16. If Δx = Δp, Δv = ?",
+o:["1/m √(h/π)","√(h/π)","1/2m √(h/π)","√(h/2π)"],a:2},
+{q:"17. Uncertainty in velocity:",
+o:["1×10⁹ cm/s","1×10¹¹ cm/s","1×10⁵ cm/s","1×10⁶ cm/s"],a:0},
+{q:"18. Max electrons in sub-shell:",
+o:["2l+1","4l+2","2n²","4l"],a:1},
+{q:"19. Not permissible arrangement:",
+o:["n=5,l=3,m=0","n=3,l=2,m=-2","n=3,l=2,m=-3","n=4,l=0,m=0"],a:2},
+{q:"20. KE per atom:",
+o:["2.2×10⁻¹⁹ J","2×10⁻¹⁹ J","2×10⁻²⁰ J","4×10⁻²⁰ J"],a:2},
+{q:"21. Electronic config [Ar]3d⁶:",
+o:["Co³⁺","Ni³⁺","Mn³⁺","Fe³⁺"],a:0},
+{q:"22. Correct filling sequence:",
+o:["ns→np→(n-1)d→(n-2)f","ns→(n-2)f→(n-1)d→np","ns→(n-1)d→(n-2)f→np","ns→(n-2)f→np→(n-1)d"],a:1},
+{q:"23. Relation between wavelengths:",
+o:["λ1=λ2","λ1=2λ2","λ1=4λ2","λ1=½λ2"],a:1},
+{q:"24. Max electrons (l=3,n=4):",
+o:["10","12","14","16"],a:2},
+{q:"25. Quantum numbers for Rb valence electron:",
+o:["5,0,0,+1/2","5,1,0,+1/2","5,1,1,+1/2","6,0,0,+1/2"],a:0},
+{q:"26. Orbital angular momentum (p electron):",
+o:["√3 h/2π","√(3/2) h/2π","√6 h/2π","h/√2π"],a:3},
+{q:"27. Wavelength closest value:",
+o:["25","50","75","10"],a:1},
+{q:"28. Max electrons (n=3,l=1,m=-1):",
+o:["6","4","2","10"],a:2},
+{q:"29. Max orbitals (n=3,l=1,m=0):",
+o:["1","2","3","4"],a:0},
+{q:"30. Energy of 45 nm light:",
+o:["4.42×10⁻¹⁵","4.42×10⁻¹⁸","6.67×10¹¹","6.67×10¹⁵"],a:1},
+{q:"31. Magnetic moment 2.84 BM:",
+o:["Ni²⁺","Ti³⁺","Cr³⁺","Co²⁺"],a:2},
+{q:"32. Angular momentum in d orbital:",
+o:["0","√2 ħ","√6 ħ","2√3 ħ"],a:2},
+{q:"33. Two electrons in same orbital distinguished by:",
+o:["n","l","m","Spin"],a:3},
+{q:"34. Electrons in orbital (n=3,l=1):",
+o:["2","6","10","14"],a:0},
+{q:"35. Orbitals with density along axes:",
+o:["dz² & dx²-y²","dz² & dxz","dxz & dyz","dxy & dx²-y²"],a:0},
+{q:"36. Wrong statement:",
+o:["ΔEΔt ≥ h/4π","Half filled more stable","2s lower than 2p (H-like)","All correct"],a:2},
+{q:"37. Wrong statement:",
+o:["Given N configuration shown","Orbital has 3 quantum numbers","s orbital angular momentum zero","m for dz² is 0"],a:0}
+];
+
+const form = document.getElementById("quizForm");
+
+questions.forEach((item,index)=>{
+    let div=document.createElement("div");
+    div.className="question";
+    div.innerHTML=`<p>${item.q}</p>`;
+    item.o.forEach((opt,i)=>{
+        div.innerHTML+=`
+        <label>
+        <input type="radio" name="q${index}" value="${i}">
+        ${opt}
+        </label><br>`;
+    });
+    form.appendChild(div);
+});
+
+</script>
+
+<br>
+<button type="button" onclick="submitQuiz()">Submit Quiz</button>
+<div class="result" id="result"></div>
+
+</form>
+</div>
+
+<script>
+function submitQuiz(){
+    let score=0;
+    questions.forEach((item,index)=>{
+        const ans=document.querySelector(`input[name="q${index}"]:checked`);
+        if(ans && parseInt(ans.value)===item.a){
+            score++;
+        }
+    });
+    document.getElementById("result").innerHTML=
+    "Your Score: "+score+" / "+questions.length;
+}
+</script>
+
+</body>
+</html>
