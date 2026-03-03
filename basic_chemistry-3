@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Chemistry MCQ (51–75)</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    margin:40px;
+    background:#f9f9f9;
+}
+h2{
+    text-align:center;
+}
+.question{
+    margin-bottom:18px;
+}
+.options{
+    margin-left:20px;
+}
+.answer-key{
+    margin-top:40px;
+    padding:20px;
+    background:#eeeeee;
+    border-radius:8px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Chemistry MCQ (Questions 51–75)</h2>
+
+<div class="question">
+<b>51.</b> Maximum number of electrons in n = 3 shell:<br>
+<div class="options">
+(a) 8<br>
+(b) 18<br>
+(c) 32<br>
+(d) 9
+</div>
+</div>
+
+<div class="question">
+<b>52.</b> Shape of s-orbital:<br>
+<div class="options">
+(a) Dumbbell<br>
+(b) Spherical<br>
+(c) Linear<br>
+(d) Tetrahedral
+</div>
+</div>
+
+<div class="question">
+<b>53.</b> Pauli’s exclusion principle states:<br>
+<div class="options">
+(a) Max 2 electrons per orbital<br>
+(b) Electrons fill lowest energy first<br>
+(c) Half-filled orbitals stable<br>
+(d) Energy quantized
+</div>
+</div>
+
+<div class="question">
+<b>54.</b> Hund’s rule relates to:<br>
+<div class="options">
+(a) Pairing<br>
+(b) Maximum multiplicity<br>
+(c) Energy levels<br>
+(d) Ionization
+</div>
+</div>
+
+<div class="question">
+<b>55.</b> 2p subshell has orbitals:<br>
+<div class="options">
+(a) 1<br>
+(b) 2<br>
+(c) 3<br>
+(d) 5
+</div>
+</div>
+
+<div class="question">
+<b>56.</b> Maximum electrons in d-subshell:<br>
+<div class="options">
+(a) 6<br>
+(b) 10<br>
+(c) 14<br>
+(d) 2
+</div>
+</div>
+
+<div class="question">
+<b>57.</b> Quantum number for shape:<br>
+<div class="options">
+(a) n<br>
+(b) l<br>
+(c) m<br>
+(d) s
+</div>
+</div>
+
+<div class="question">
+<b>58.</b> Electronic configuration of Na (Z=11):<br>
+<div class="options">
+(a) 2,8,1<br>
+(b) 2,8,2<br>
+(c) 2,7,2<br>
+(d) 2,6,3
+</div>
+</div>
+
+<div class="question">
+<b>59.</b> Ionization energy increases across period due to:<br>
+<div class="options">
+(a) Shielding<br>
+(b) Nuclear charge<br>
+(c) Size increase<br>
+(d) Mass
+</div>
+</div>
+
+<div class="question">
+<b>60.</b> Electronegativity highest for:<br>
+<div class="options">
+(a) F<br>
+(b) O<br>
+(c) Cl<br>
+(d) N
+</div>
+</div>
+
+<div class="question">
+<b>61.</b> Covalent bond formed by:<br>
+<div class="options">
+(a) Electron transfer<br>
+(b) Electron sharing<br>
+(c) Proton transfer<br>
+(d) Neutron sharing
+</div>
+</div>
+
+<div class="question">
+<b>62.</b> Hybridization in CH₄:<br>
+<div class="options">
+(a) sp<br>
+(b) sp²<br>
+(c) sp³<br>
+(d) dsp²
+</div>
+</div>
+
+<div class="question">
+<b>63.</b> Bond angle in NH₃:<br>
+<div class="options">
+(a) 120°<br>
+(b) 180°<br>
+(c) 109.5°<br>
+(d) 107°
+</div>
+</div>
+
+<div class="question">
+<b>64.</b> VSEPR theory predicts:<br>
+<div class="options">
+(a) Shape<br>
+(b) Energy<br>
+(c) Mass<br>
+(d) Spin
+</div>
+</div>
+
+<div class="question">
+<b>65.</b> Oxidation number of Na:<br>
+<div class="options">
+(a) 0<br>
+(b) +1<br>
+(c) -1<br>
+(d) +2
+</div>
+</div>
+
+<div class="question">
+<b>66.</b> Oxidation is loss of:<br>
+<div class="options">
+(a) Proton<br>
+(b) Neutron<br>
+(c) Electron<br>
+(d) Atom
+</div>
+</div>
+
+<div class="question">
+<b>67.</b> Reduction is gain of:<br>
+<div class="options">
+(a) Electron<br>
+(b) Proton<br>
+(c) Oxygen<br>
+(d) Hydrogen
+</div>
+</div>
+
+<div class="question">
+<b>68.</b> Strong base example:<br>
+<div class="options">
+(a) NaOH<br>
+(b) NH₄OH<br>
+(c) CH₃COOH<br>
+(d) H₂CO₃
+</div>
+</div>
+
+<div class="question">
+<b>69.</b> Buffer solution resists change in:<br>
+<div class="options">
+(a) Temperature<br>
+(b) Pressure<br>
+(c) pH<br>
+(d) Volume
+</div>
+</div>
+
+<div class="question">
+<b>70.</b> Arrhenius acid produces:<br>
+<div class="options">
+(a) OH⁻<br>
+(b) H⁺<br>
+(c) e⁻<br>
+(d) O₂
+</div>
+</div>
+
+<div class="question">
+<b>71.</b> Le Chatelier’s principle relates to:<br>
+<div class="options">
+(a) Kinetics<br>
+(b) Equilibrium shift<br>
+(c) Structure<br>
+(d) Bonding
+</div>
+</div>
+
+<div class="question">
+<b>72.</b> Exothermic reaction releases:<br>
+<div class="options">
+(a) Heat<br>
+(b) Light only<br>
+(c) Electrons<br>
+(d) Gas
+</div>
+</div>
+
+<div class="question">
+<b>73.</b> Endothermic reaction absorbs:<br>
+<div class="options">
+(a) Heat<br>
+(b) Light only<br>
+(c) Proton<br>
+(d) Catalyst
+</div>
+</div>
+
+<div class="question">
+<b>74.</b> Rate of reaction increases with:<br>
+<div class="options">
+(a) Lower temperature<br>
+(b) Catalyst<br>
+(c) Lower concentration<br>
+(d) Smaller surface area
+</div>
+</div>
+
+<div class="question">
+<b>75.</b> Activation energy is minimum for:<br>
+<div class="options">
+(a) Slow reaction<br>
+(b) Fast reaction<br>
+(c) Endothermic<br>
+(d) Equilibrium
+</div>
+</div>
+
+<div class="answer-key">
+<h3>Answer Key (51–75)</h3>
+51–b<br>
+52–b<br>
+53–a<br>
+54–b<br>
+55–c<br>
+56–b<br>
+57–b<br>
+58–a<br>
+59–b<br>
+60–a<br>
+61–b<br>
+62–c<br>
+63–d<br>
+64–a<br>
+65–a<br>
+66–c<br>
+67–a<br>
+68–a<br>
+69–c<br>
+70–b<br>
+71–b<br>
+72–a<br>
+73–a<br>
+74–b<br>
+75–b
+</div>
+
+</body>
+</html>
