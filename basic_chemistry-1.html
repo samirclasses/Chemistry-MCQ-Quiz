@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Chemistry MCQ Quiz (1–25)</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right,#0f2027,#203a43,#2c5364);
+    padding:20px;
+}
+.container{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    max-width:950px;
+    margin:auto;
+    box-shadow:0 0 15px rgba(0,0,0,0.3);
+}
+h2{text-align:center;}
+.question{
+    margin-bottom:20px;
+    padding:15px;
+    border-radius:8px;
+    background:#f4f4f4;
+}
+.option{
+    display:block;
+    padding:6px;
+    border-radius:5px;
+    margin:3px 0;
+}
+.correct-option{
+    background:#c8f7c5;
+}
+.wrong-option{
+    background:#f7c5c5;
+}
+button{
+    padding:10px 20px;
+    font-size:16px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    margin:10px 5px;
+}
+.submit-btn{background:#28a745;color:white;}
+.reset-btn{background:#dc3545;color:white;}
+.score{
+    font-size:20px;
+    font-weight:bold;
+    margin-top:15px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+<h2>Chemistry MCQ Quiz (1–25)</h2>
+<div id="quiz"></div>
+
+<button class="submit-btn" onclick="checkAnswers()">Submit</button>
+<button class="reset-btn" onclick="location.reload()">Reset</button>
+
+<div class="score" id="score"></div>
+</div>
+
+<script>
+
+const quizData = [
+
+{q:"1. Significant figures (193, 0.193, 0.0193)?",
+o:["2,3,4","3,3,3","3,5,4","3,4,4"],a:1},
+
+{q:"2. Equivalent weight of acid?",
+o:["Molecular weight/acidity","Molecular weight/basicity","Molecular weight × basicity","Molecular weight × acidity"],a:0},
+
+{q:"3. Avogadro's number is molecules in?",
+o:["1 litre","1 g","Gram molecular mass","1 g atom"],a:2},
+
+{q:"4. A mole is related to?",
+o:["Particles","Volume","Mass","All of these"],a:3},
+
+{q:"5. Molarity of Ba(OH)₂ solution?",
+o:["0.07","0.14","0.28","0.35"],a:1},
+
+{q:"6. Number of atoms in 560 g Fe?",
+o:["Twice 70g N","Half 20g H","Both correct","None correct"],a:2},
+
+{q:"7. Oxygen atoms in 6.4 g SO₂?",
+o:["6×10²³","11×10²³","12×10²³","1.2×10²³"],a:2},
+
+{q:"8. Volume of H₂ required?",
+o:["89.6 L","67.2 L","44.8 L","22.4 L"],a:1},
+
+{q:"9. Moles in 1000 mL of 3M KCl?",
+o:["2","3","4","6"],a:1},
+
+{q:"10. Atomic weight (specific heat = 0.16)?",
+o:["1.6","16","32","48"],a:3},
+
+{q:"11. Relation between vapour density and molecular mass?",
+o:["VD = 2M","VD = M/2","M = (VD)²","VD = M²"],a:1},
+
+{q:"12. Moles of KClO₃ required?",
+o:["1","2","3","4"],a:1},
+
+{q:"13. Mass of H₃PO₄ required?",
+o:["0.98","98","89","49"],a:1},
+
+{q:"14. Value of n in Na₂CO₃·nH₂O?",
+o:["4","6","8","10"],a:3},
+
+{q:"15. Mole fraction of NO₂?",
+o:["1.6","0.8","2.4","0.6"],a:1},
+
+{q:"16. Law of multiple proportions example?",
+o:["Cu & CuSO₄","CuO & Cu₂O","H₂S & SO₂","NH₃ & NCl₃"],a:1},
+
+{q:"17. Value of 1 amu?",
+o:["1.66×10⁻²⁴ g","12×10⁻²⁴ g","1.992×10⁻²⁴ g","1 g"],a:0},
+
+{q:"18. Normality of 0.04M H₂SO₄?",
+o:["0.02 N","0.01 N","0.04 N","0.08 N"],a:3},
+
+{q:"19. Heaviest among following?",
+o:["1 mole O₂","1 molecule SO₃","100 amu U","44 g CO₂"],a:0},
+
+{q:"20. Electrons in 3.6 mL water?",
+o:["2NA","NA","NA/2","4NA"],a:0},
+
+{q:"21. Glucose molecules consumed?",
+o:["0.5×10²³","1.0×10²³","1.5×10²³","2.0×10²³"],a:1},
+
+{q:"22. 10 ppm SO₂ volume per litre?",
+o:["10⁻² mL","10⁻³ mL","10⁻⁴ mL","10 mL"],a:2},
+
+{q:"23. Molarity of pure water?",
+o:["55.56 M","5.56 M","1.0 M","0.01 M"],a:0},
+
+{q:"24. Grams of dibasic acid (MW=200) for decinormal solution (100mL)?",
+o:["20","10","5","0.5"],a:2},
+
+{q:"25. Normality of 0.3M H₃PO₄?",
+o:["0.1 N","0.45 N","0.6 N","0.9 N"],a:3}
+
+];
+
+function loadQuiz(){
+const quiz=document.getElementById("quiz");
+quizData.forEach((item,index)=>{
+let div=document.createElement("div");
+div.classList.add("question");
+div.innerHTML="<p>"+item.q+"</p>";
+item.o.forEach((opt,i)=>{
+div.innerHTML+=`<label class="option">
+<input type="radio" name="q${index}" value="${i}">
+${opt}
+</label>`;
+});
+quiz.appendChild(div);
+});
+}
+
+function checkAnswers(){
+let score=0;
+quizData.forEach((item,index)=>{
+const selected=document.querySelector(`input[name="q${index}"]:checked`);
+const options=document.querySelectorAll(`input[name="q${index}"]`);
+options.forEach((opt,i)=>{
+opt.parentElement.classList.remove("correct-option","wrong-option");
+if(i===item.a){
+opt.parentElement.classList.add("correct-option");
+}
+});
+if(selected){
+if(parseInt(selected.value)===item.a){
+score++;
+}else{
+selected.parentElement.classList.add("wrong-option");
+}
+}
+});
+document.getElementById("score").innerHTML="Your Score: "+score+" / "+quizData.length;
+}
+
+loadQuiz();
+
+</script>
+</body>
+</html>
