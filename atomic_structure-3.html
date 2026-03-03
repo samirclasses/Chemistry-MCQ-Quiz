@@ -1,243 +1,260 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Atomic Structure MCQ Quiz</title>
-
+<title>MCQs 51-75 (Non-Interactive)</title>
 <style>
 body{
     font-family: Arial, sans-serif;
-    background:#f2f4f8;
-    padding:20px;
+    line-height:1.6;
+    margin:40px;
 }
-
-h2{
+h1{
     text-align:center;
 }
-
-.quiz-box{
-    background:#ffffff;
-    padding:20px;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
-
 .question{
     margin-bottom:20px;
-    padding:15px;
-    border-bottom:1px solid #ddd;
 }
-
-.correct{
-    color:green;
-    font-weight:bold;
-}
-
-.incorrect{
-    color:red;
-    font-weight:bold;
-}
-
-button{
-    padding:10px 20px;
-    font-size:16px;
-    background:#007bff;
-    color:white;
-    border:none;
-    border-radius:5px;
-    cursor:pointer;
-}
-
-button:hover{
-    background:#0056b3;
-}
-
-#result{
-    margin-top:20px;
-    font-size:18px;
-    font-weight:bold;
+.answers{
+    margin-top:40px;
+    padding:20px;
+    background:#f4f4f4;
+    border:1px solid #ccc;
 }
 </style>
-
 </head>
 <body>
 
-<h2>Atomic Structure MCQ Quiz</h2>
+<h1>MCQs (Q.51 – Q.75)</h1>
 
-<div class="quiz-box">
-<form id="quizForm"></form>
-
-<button type="button" onclick="submitQuiz()">Submit</button>
-
-<div id="result"></div>
+<div class="question">
+<b>51.</b> Correct order of micro, nano, femto and pico:<br>
+(a) Micro ≤ Nano ≤ Pico ≤ Femto<br>
+(b) Pico ≤ Femto ≤ Nano ≤ Micro<br>
+(c) Femto ≤ Pico ≤ Nano ≤ Micro<br>
+(d) Femto ≤ Nano ≤ Micro ≤ Pico
 </div>
 
-<script>
+<div class="question">
+<b>52.</b> Number of atoms in 0.016 g methane:<br>
+(a) 0.5 N₀<br>
+(b) 0.005 N₀<br>
+(c) N₀<br>
+(d) 1.6 N₀
+</div>
 
-const questions = [
+<div class="question">
+<b>53.</b> 15 litre atmosphere equals:<br>
+(a) 1.515×10⁸ erg<br>
+(b) 15.15×10⁹ erg<br>
+(c) 1.515×10¹⁰ erg<br>
+(d) 15.15×10¹² erg
+</div>
 
-{q:"A monoenergetic electron beam wavelength is halved. Kinetic energy changes by factor?",
-options:["8","6","4","3"], answer:2},
+<div class="question">
+<b>54.</b> Equal moles water and urea. Mass % of urea:<br>
+(a) 22.086<br>
+(b) 11.536<br>
+(c) 46.146<br>
+(d) 23.076
+</div>
 
-{q:"de Broglie wavelength of 1 kg ball having KE 0.5 J?",
-options:["6.626 × 10⁻³⁴ m","13.2 × 10⁻³⁴ m","10.38 × 10⁻²¹ m","6.626 Å"], answer:2},
+<div class="question">
+<b>55.</b> For mixture X reaction, moles of Y and Z:<br>
+(a) 0.02, 0.01<br>
+(b) 0.01, 0.01<br>
+(c) 0.01, 0.02<br>
+(d) 0.02, 0.02
+</div>
 
-{q:"Correct increasing energy order?",
-options:["(iv)<(ii)<(iii)<(i)",
-"(ii)<(iv)<(i)<(iii)",
-"(i)<(iii)<(ii)<(iv)",
-"(iii)<(i)<(iv)<(ii)"], answer:1},
+<div class="question">
+<b>56.</b> Volume of 0.1 M KOH required:<br>
+(a) 10 mL<br>
+(b) 40 mL<br>
+(c) 60 mL<br>
+(d) 80 mL
+</div>
 
-{q:"Wavelength for n=4 → n=1 (Lyman)?",
-options:["96.97 nm","969.7 nm","9.697 nm","None"], answer:0},
+<div class="question">
+<b>57.</b> Zinc required to produce 224 mL H₂:<br>
+(a) 65.0 g<br>
+(b) 0.65 g<br>
+(c) 6.35 g<br>
+(d) 0.065 g
+</div>
 
-{q:"Energy of first state of Li²⁺?",
-options:["19.6×10⁻¹⁸","4.41×10⁻¹⁸","19.6×10⁻¹⁹","4.41×10⁻¹⁷"], answer:3},
+<div class="question">
+<b>58.</b> Concentration of urea solution:<br>
+(a) 0.02 M<br>
+(b) 0.001 M<br>
+(c) 0.01 M<br>
+(d) 0.1 M
+</div>
 
-{q:"Mass ratio first Lyman : first Balmer?",
-options:["4:1","27:5","1:4","5:27"], answer:1},
+<div class="question">
+<b>59.</b> Mole fraction of glucose:<br>
+(a) 0.0099<br>
+(b) 0.0999<br>
+(c) 0.9999<br>
+(d) 0.9111
+</div>
 
-{q:"Shortest wavelength at 50kV X-ray?",
-options:["0.1245 Å","0.3485 Å","0.2485 Å","0.03456 Å"], answer:2},
+<div class="question">
+<b>60.</b> Weight of 1×10²² molecules CuSO₄·2H₂O:<br>
+(a) 42.42 g<br>
+(b) 41.42 g<br>
+(c) 44.44 g<br>
+(d) 48.94 g
+</div>
 
-{q:"Energy difference ratio (2-3)/(3-4)?",
-options:["7/20","20/7","27/9","9/27"], answer:1},
+<div class="question">
+<b>61.</b> Molality of 2.05 M acetic acid (density 1.02 g/mL):<br>
+(a) 1.14<br>
+(b) 3.28<br>
+(c) 2.28<br>
+(d) 0.44
+</div>
 
-{q:"de Broglie wavelength in 3rd orbit?",
-options:["2πa","6πa","3a","a/3"], answer:1},
+<div class="question">
+<b>62.</b> Correct statement for reaction:<br>
+(a) 33.6 L H₂ regardless of T,P<br>
+(b) 67.2 L H₂ at STP per mole Al<br>
+(c) 11.2 L H₂ at STP per mole HCl<br>
+(d) 6 L HCl per 3 L H₂
+</div>
 
-{q:"Longest Balmer of He⁺?",
-options:["a/4","5a/9","4a/9","9a/5"], answer:1},
+<div class="question">
+<b>63.</b> Molarity of 98% H₂SO₄ (density 1.84 g/cc):<br>
+(a) 1.84 M<br>
+(b) 81.4 M<br>
+(c) 18.4 M<br>
+(d) 184 M
+</div>
 
-{q:"Max electrons in orbit diameter 16.92 Å?",
-options:["32","16","48","72"], answer:0},
+<div class="question">
+<b>64.</b> Moles of O₂ in 1 L air (21% O₂):<br>
+(a) 0.176 mol<br>
+(b) 0.32 mol<br>
+(c) 0.0093 mol<br>
+(d) 2.20 mol
+</div>
 
-{q:"Correct wavelength relation?",
-options:["X₁+X₂+X₃=0",
-"X₃=X₁+X₂",
-"X₃²=X₁²+X₂²",
-"X₃=(X₁X₂)/(X₁+X₂)"], answer:3},
+<div class="question">
+<b>65.</b> Atoms in 4.25 g NH₃:<br>
+(a) 6×10²³<br>
+(b) 15×10²³<br>
+(c) 1.5×10²³<br>
+(d) 2.5×10²³
+</div>
 
-{q:"Photons emitted per second?",
-options:["2.51×10³⁰","2.27×10²⁸","1.72×10³⁰","1.77×10²⁷"], answer:2},
+<div class="question">
+<b>66.</b> NH₃ formed from 2L N₂ and 2L H₂:<br>
+(a) 2 L<br>
+(b) 1 L<br>
+(c) 0.66 L<br>
+(d) 1.33 L
+</div>
 
-{q:"Moles of electrons in 1 kg?",
-options:["6.023×10²³",
-"1/(9.108×10³¹)",
-"6.023/(9.108×10⁵⁴)",
-"1/(9.108×6.023)×10⁸"], answer:3},
+<div class="question">
+<b>67.</b> O₂ formed from 1 kg coal at NTP:<br>
+(a) 22.4 L<br>
+(b) 2240 L<br>
+(c) 1866 L<br>
+(d) 100 L
+</div>
 
-{q:"Infinity to n=1 wavelength?",
-options:["91 nm","192 nm","406 nm","9.1×10⁻⁸ nm"], answer:0},
+<div class="question">
+<b>68.</b> Ratio of molecules (O₂:N₂):<br>
+(a) 3:32<br>
+(b) 7:32<br>
+(c) 1:4<br>
+(d) 3:16
+</div>
 
-{q:"Highest energy set?",
-options:["n=3,l=2","n=4,l=0","n=3,l=0","n=3,l=1"], answer:0},
+<div class="question">
+<b>69.</b> Mass of 0.5 mol O₃:<br>
+(a) 16 g<br>
+(b) 20 g<br>
+(c) 48 g<br>
+(d) 24 g
+</div>
 
-{q:"Not isoelectronic set?",
-options:["PO₄³⁻,SO₄²⁻,ClO₄⁻",
-"CN⁻,N₂,C₂²⁻",
-"SO₃²⁻,CO₃²⁻,NO₃⁻",
-"BO₃³⁻,CO₃²⁻,NO₃⁻"], answer:2},
+<div class="question">
+<b>70.</b> Molecular mass (Victor Meyer method):<br>
+(a) 54.44 g<br>
+(b) 34.64 g<br>
+(c) 64.76 g<br>
+(d) 74.66 g
+</div>
 
-{q:"The orientation of an atomic orbital is governed by which quantum number?",
-options:["Principal quantum number",
-"Azimuthal quantum number",
-"Magnetic quantum number",
-"Spin quantum number"], answer:2},
+<div class="question">
+<b>71.</b> Equivalent weight of metal (40% O):<br>
+(a) 24<br>
+(b) 12<br>
+(c) 36<br>
+(d) 20
+</div>
 
-{q:"Which of the following sets contains only isoelectronic species?",
-options:["CN⁻, N₂, CO",
-"NO₂, CO₂, SO₂",
-"Na⁺, Mg²⁺, Al³⁺",
-"O²⁻, F⁻, Ne"], answer:0},
+<div class="question">
+<b>72.</b> Maximum moles Ba₃(PO₄)₂ formed:<br>
+(a) 0.10<br>
+(b) 0.20<br>
+(c) 0.30<br>
+(d) 0.40
+</div>
 
-{q:"Energy of hydrogen atom in ground state is:",
-options:["-13.6 eV",
-"-3.4 eV",
-"-1.51 eV",
-"-0.85 eV"], answer:0},
+<div class="question">
+<b>73.</b> Equivalent weight of MnSO₄ is half when converted to:<br>
+(a) MnO<br>
+(b) MnO₄²⁻<br>
+(c) MnO₂<br>
+(d) MnO₄⁻
+</div>
 
-{q:"Maximum number of electrons in n = 4 shell is:",
-options:["8","16","18","32"], answer:3},
+<div class="question">
+<b>74.</b> Volume of 0.1 N NaOH required:<br>
+(a) 4 mL<br>
+(b) 20 mL<br>
+(c) 40 mL<br>
+(d) 60 mL
+</div>
 
-{q:"Number of orbitals present in 3d subshell is:",
-options:["3","5","7","9"], answer:1},
+<div class="question">
+<b>75.</b> Equivalent weight of K₂Cr₂O₇ in iodometry:<br>
+(a) Same as mol. wt.<br>
+(b) Mol.wt./2<br>
+(c) Mol.wt./4<br>
+(d) Mol.wt./6
+</div>
 
-{q:"If frequency of radiation doubles, its energy becomes:",
-options:["Half",
-"Double",
-"Four times",
-"Unchanged"], answer:1},
-
-{q:"The de Broglie wavelength is inversely proportional to:",
-options:["Velocity",
-"Momentum",
-"Charge",
-"Energy"], answer:1},
-
-{q:"Which transition in hydrogen atom emits maximum energy?",
-options:["n=2 → n=1",
-"n=3 → n=2",
-"n=4 → n=3",
-"n=5 → n=4"], answer:0}
-
-];
-
-// Randomize questions
-questions.sort(() => Math.random() - 0.5);
-
-const form = document.getElementById("quizForm");
-
-questions.forEach((item,index)=>{
-    let div=document.createElement("div");
-    div.className="question";
-    div.innerHTML="<p><b>"+(index+1)+". "+item.q+"</b></p>";
-
-    item.options.forEach((opt,i)=>{
-        div.innerHTML+=`
-        <label id="label${index}_${i}">
-        <input type="radio" name="q${index}" value="${i}">
-        ${opt}
-        </label><br>`;
-    });
-
-    form.appendChild(div);
-});
-
-function submitQuiz(){
-
-    let score=0;
-
-    questions.forEach((item,index)=>{
-
-        let selected=document.querySelector(`input[name="q${index}"]:checked`);
-
-        item.options.forEach((opt,i)=>{
-            let label=document.getElementById(`label${index}_${i}`);
-
-            if(i===item.answer){
-                label.classList.add("correct");
-            }
-        });
-
-        if(selected){
-            if(parseInt(selected.value)===item.answer){
-                score++;
-            } else {
-                let wrongLabel=document.getElementById(`label${index}_${selected.value}`);
-                wrongLabel.classList.add("incorrect");
-            }
-        }
-    });
-
-    document.getElementById("result").innerHTML=
-    `Total Questions: ${questions.length}<br>
-     Correct: ${score}<br>
-     Incorrect: ${questions.length-score}<br>
-     Score: ${(score/questions.length*100).toFixed(2)}%`;
-}
-
-</script>
+<div class="answers">
+<h2>Answer Key</h2>
+51. (c)<br>
+52. (a)<br>
+53. (c)<br>
+54. (c)<br>
+55. (b)<br>
+56. (b)<br>
+57. (b)<br>
+58. (c)<br>
+59. (a)<br>
+60. (a)<br>
+61. (b)<br>
+62. (c)<br>
+63. (c)<br>
+64. (c)<br>
+65. (a)<br>
+66. (c)<br>
+67. (c)<br>
+68. (d)<br>
+69. (d)<br>
+70. (d)<br>
+71. (b)<br>
+72. (a)<br>
+73. (d)<br>
+74. (b)<br>
+75. (d)
+</div>
 
 </body>
 </html>
