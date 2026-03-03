@@ -47,8 +47,14 @@ button:hover{
     font-size:18px;
     font-weight:bold;
 }
-.correct{color:green;}
-.wrong{color:red;}
+.correct{
+    color: green;
+    font-weight: bold;
+}
+.wrong{
+    color: red;
+    font-weight: bold;
+}
 </style>
 
 </head>
@@ -166,15 +172,34 @@ questions.forEach((item,index)=>{
 
 <script>
 function submitQuiz(){
-    let score=0;
+    let score = 0;
+
     questions.forEach((item,index)=>{
-        const ans=document.querySelector(`input[name="q${index}"]:checked`);
-        if(ans && parseInt(ans.value)===item.a){
+        const options = document.getElementsByName("q"+index);
+        const selected = document.querySelector(`input[name="q${index}"]:checked`);
+
+        options.forEach((opt,i)=>{
+            const label = opt.parentElement;
+
+            // Reset previous colors
+            label.classList.remove("correct","wrong");
+
+            if(i === item.a){
+                label.classList.add("correct"); // correct answer green
+            }
+
+            if(selected && parseInt(selected.value) === i && i !== item.a){
+                label.classList.add("wrong"); // wrong selection red
+            }
+        });
+
+        if(selected && parseInt(selected.value) === item.a){
             score++;
         }
     });
-    document.getElementById("result").innerHTML=
-    "Your Score: "+score+" / "+questions.length;
+
+    document.getElementById("result").innerHTML =
+        "Your Score: " + score + " / " + questions.length;
 }
 </script>
 
