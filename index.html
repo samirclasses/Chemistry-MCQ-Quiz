@@ -1,40 +1,113 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Apex-Chemistry-Bengali</title>
+    <title>Apex Chemistry </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <style>
-        table {
-            border-collapse: collapse;
-            width: 25%;
-        
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(to right, #1d3557, #457b9d);
         }
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
+
+        header {
             text-align: center;
+            padding: 25px;
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            letter-spacing: 1px;
         }
-        th {
-            background-color: aqua;
+
+        .container {
+            width: 85%;
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .section-title {
+            font-size: 20px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            color: #1d3557;
+            border-left: 5px solid #457b9d;
+            padding-left: 10px;
+        }
+
+        .links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 12px;
+        }
+
+        .links a {
+            text-decoration: none;
+            padding: 12px;
+            background: #457b9d;
+            color: white;
+            border-radius: 8px;
+            text-align: center;
+            transition: 0.3s ease;
+            font-weight: 500;
+        }
+
+        .links a:hover {
+            background: #1d3557;
+            transform: translateY(-3px);
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 14px;
         }
     </style>
-   
 </head>
+
 <body>
-<h2>Apex-Chemistry-Bengali</h2>
 
+<header>
+    Apex Chemistry Bengali
+</header>
 
-<a href="Atomic_structure.html">Atomic Structure</a><br>
- <a href="atomic_structure-2.html">Atomic Structure, Set-2</a><br>
- <a href="atomic_structure-3.html">Atomic Structure, Set-3</a><br>
- <a href="atomic_structure-4.html">Atomic Structure, Set-4</a><br>
- <br><a href="atomic_structure-5.html">Atomic Structure, Set-5</a><br>
- <br><a href="basic_chemistry-1.html">Some Basic Concepts of Chemistry, Set-1</a><br>  
- <br><a href="basic_chemistry-2.html">Some Basic Concepts of Chemistry, Set-2</a><br>
-  <br><a href="basic_chemistry-3.html">Some Basic Concepts of Chemistry, Set-3</a><br>   
-    <br><a href="basic_chemistry-4.html">Some Basic Concepts of Chemistry, Set-4</a><br>
-      <br><a href="basic_chemistry-5.html">Some Basic Concepts of Chemistry, Set-5</a><br>
-     <br><a href="basic_chemistry-6.html">Some Basic Concepts of Chemistry, Set-6</a><br>
-     <br><a href="organic-1.html">Organic Chemmisty, Set-1</a><br>
+<div class="container">
+
+    <div class="section-title">Atomic Structure</div>
+    <div class="links">
+        <a href="Atomic_structure.html">Atomic Structure</a>
+        <a href="atomic_structure-2.html">Atomic Structure, Set-2</a>
+        <a href="atomic_structure-3.html">Atomic Structure, Set-3</a>
+        <a href="atomic_structure-4.html">Atomic Structure, Set-4</a>
+        <a href="atomic_structure-5.html">Atomic Structure, Set-5</a>
+    </div>
+
+    <div class="section-title">Some Basic Concepts of Chemistry</div>
+    <div class="links">
+        <a href="basic_chemistry-1.html">Some Basic Concepts of Chemistry, Set-1</a>
+        <a href="basic_chemistry-2.html">Some Basic Concepts of Chemistry, Set-2</a>
+        <a href="basic_chemistry-3.html">Some Basic Concepts of Chemistry, Set-3</a>
+        <a href="basic_chemistry-4.html">Some Basic Concepts of Chemistry, Set-4</a>
+        <a href="basic_chemistry-5.html">Some Basic Concepts of Chemistry, Set-5</a>
+        <a href="basic_chemistry-6.html">Some Basic Concepts of Chemistry, Set-6</a>
+    </div>
+
+    <div class="section-title">Organic Chemistry</div>
+    <div class="links">
+        <a href="organic-1.html">Organic Chemmisty, Set-1</a>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Apex Chemistry Bengali | All Rights Reserved
+</footer>
 
 </body>
 </html>
