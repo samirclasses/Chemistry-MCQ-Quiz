@@ -3,1973 +3,1935 @@
 <head>
 <meta charset="UTF-8">
 <title>Organic Chemistry - Full 186 MCQ Interactive Quiz</title>
-
 <style>
-body{
-    font-family: Arial, sans-serif;
-    background:#f4f6f9;
-    padding:20px;
-}
-h1,h2{
-    text-align:center;
-}
-.question{
-    background:white;
-    padding:15px;
-    margin-bottom:15px;
-    border-radius:8px;
-    box-shadow:0 2px 5px rgba(0,0,0,0.1);
-}
-.option{
-    padding:8px;
-    margin:5px 0;
-    border-radius:5px;
-    cursor:pointer;
-}
-.option:hover{
-    background:#e8f0fe;
-}
-.correct{
-    background:#c8f7c5 !important;
-}
-.wrong{
-    background:#f7c5c5 !important;
-}
-#scoreBox{
-    font-size:20px;
-    font-weight:bold;
-    text-align:center;
-    margin-top:20px;
-}
-button{
-    padding:10px 20px;
-    font-size:16px;
-    cursor:pointer;
-}
+body{font-family:Arial;background:#f4f6f9;padding:20px;}
+h1,h2{text-align:center;}
+.question{background:white;padding:15px;margin-bottom:15px;border-radius:8px;
+box-shadow:0 2px 5px rgba(0,0,0,0.1);}
+.option{padding:8px;margin:5px 0;border-radius:5px;cursor:pointer;}
+.option:hover{background:#e8f0fe;}
+.correct{background:#c8f7c5 !important;}
+.wrong{background:#f7c5c5 !important;}
+#scoreBox{font-size:20px;font-weight:bold;text-align:center;margin-top:20px;}
+button{padding:10px 20px;font-size:16px;cursor:pointer;}
 </style>
-
 </head>
 <body>
 <h2>Apex Chemistry</h2>
-<h1>Organic Chemistry – Complete Interactive MCQ Quiz</h1>
-
+<h1>Organic Chemistry – MCQ Quiz</h1>
 <div id="quiz"></div>
 <div id="scoreBox"></div>
-
 <div style="text-align:center;">
 <button onclick="calculateScore()">Submit Quiz</button>
 </div>
 
 <script>
-
 const quizData = [
-  {
-q:`1. The IUPAC name of C₆H₅COCl is`,
-options:[
+{
+q: `1. The IUPAC name of C₆H₅COCl is`,
+options: [
 `(a) Benzoyl chloride`,
 `(b) Benzene chloroketone`,
 `(c) Benzene carbonyl chloride`,
-`(d) Chlorophenyl ketone`
+`(d) Chlorophenyl ketone`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`2. In the reaction, CH₃CHO + HCN → CH₃CH(OH)CN. A chiral centre is produced. This product would be`,
-options:[
+q: `2. In the reaction, CH₃CHO + HCN → CH₃CH(OH)CN. A chiral centre is produced. This product would be`,
+options: [
 `(a) Racemic mixture`,
 `(b) Meso compound`,
 `(c) Dextrorotatory`,
-`(d) Laevorotatory`
+`(d) Laevorotatory`,
 ],
-answer:0
+answer: 0
 },
 {
-q:`3. Optical activity is measured by`,
-options:[
+q: `3. Optical activity is measured by`,
+options: [
 `(a) Refractometer`,
 `(b) Tracer technique`,
 `(c) Spectrograph`,
-`(d) Polarimeter`
+`(d) Polarimeter`,
 ],
-answer:3
+answer: 3
 },
 {
-q:`4. The compound having only primary hydrogen atoms is`,
-options:[
+q: `4. The compound having only primary hydrogen atoms is`,
+options: [
 `(a) Isobutene`,
 `(b) 2,3-dimethylbutene`,
 `(c) Cyclohexane`,
-`(d) Propyne`
+`(d) Propyne`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`5. Which of the following shows geometrical isomerism?`,
-options:[
+q: `5. Which of the following shows geometrical isomerism?`,
+options: [
 `(a) But-1-ene`,
 `(b) But-2-ene`,
 `(c) 2,3-dichlorobutane`,
-`(d) Ethene`
+`(d) Ethene`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`6. The number of optically active isomers of tartaric acid [CH(OH)COOH]₂ is`,
-options:[
+q: `6. The number of optically active isomers of tartaric acid [CH(OH)COOH]₂ is`,
+options: [
 `(a) 2`,
 `(b) 3`,
 `(c) 4`,
-`(d) 1`
+`(d) 1`,
 ],
-answer:0
+answer: 0
 },
 {
-q:`7. The compound in which C uses only its sp³ hybrid orbitals for bond formation is`,
-options:[
+q: `7. The compound in which C uses only its sp³ hybrid orbitals for bond formation is`,
+options: [
 `(a) HCOOH`,
 `(b) (NH₂)₂CO`,
 `(c) (CH₃)₃COH`,
-`(d) CH₃CHO`
+`(d) CH₃CHO`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`8. Number of isomers which can be obtained theoretically from monochlorination of 2-methylbutane are`,
-options:[
+q: `8. Number of isomers which can be obtained theoretically from monochlorination of 2-methylbutane are`,
+options: [
 `(a) 2`,
 `(b) 3`,
 `(c) 4`,
-`(d) 5`
+`(d) 5`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`9. An organic molecule necessarily shows optical activity if it`,
-options:[
+q: `9. An organic molecule necessarily shows optical activity if it`,
+options: [
 `(a) Is non-superimposable on its mirror image`,
 `(b) Is superimposable on its mirror image`,
 `(c) Contains asymmetric carbon atoms`,
-`(d) Is non-polar`
+`(d) Is non-polar`,
 ],
-answer:0
+answer: 0
 },
 {
-q:`10. The C-H bond distance is longest in`,
-options:[
+q: `10. The C-H bond distance is longest in`,
+options: [
 `(a) C₂H₂`,
 `(b) C₂H₄`,
 `(c) C₂H₆`,
-`(d) C₂H₂Br₂`
+`(d) C₂H₂Br₂`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`11. How many structural isomers of C₄H₁₀O are ethers?`,
-options:[
+q: `11. How many structural isomers of C₄H₁₀O are ethers?`,
+options: [
 `(a) 1`,
 `(b) 2`,
 `(c) 3`,
-`(d) 4`
+`(d) 4`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`12. Which of the following has zero dipole moment?`,
-options:[
+q: `12. Which of the following has zero dipole moment?`,
+options: [
 `(a) 1-butene`,
 `(b) Cis-2-butene`,
 `(c) Trans-2-butene`,
-`(d) 2-methyl-1-propene`
+`(d) 2-methyl-1-propene`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`13. The IUPAC name of the following compound (zigzag triene structure) is`,
-options:[
+q: `13. The IUPAC name of the following compound (zigzag triene structure) is`,
+options: [
 `(a) 2,4,5-triheptene`,
 `(b) 2,4,6-triheptene`,
 `(c) hepta-1,3,5-triene`,
-`(d) 2,4,6-heptatriene`
+`(d) 2,4,6-heptatriene`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`14. The most stable conformation of ethylene glycol is`,
-options:[
+q: `14. The most stable conformation of ethylene glycol is`,
+options: [
 `(a) Anti`,
 `(b) Gauche`,
 `(c) Fully eclipsed`,
-`(d) Partially eclipsed`
+`(d) Partially eclipsed`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`15. The total number of isomers for C₄H₈ are`,
-options:[
+q: `15. The total number of isomers for C₄H₈ are`,
+options: [
 `(a) 8`,
 `(b) 7`,
 `(c) 6`,
-`(d) 5`
+`(d) 5`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`16. C₆H₅C≡N and C₆H₅N=C are which type of isomers?`,
-options:[
+q: `16. C₆H₅C≡N and C₆H₅N=C are which type of isomers?`,
+options: [
 `(a) Tautomerism`,
 `(b) Position`,
 `(c) Functional`,
-`(d) Linkage`
+`(d) Linkage`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`17. The IUPAC name of following compound [octadec-9-enoic acid structure] is`,
-options:[
+q: `17. The IUPAC name of following compound [CH₃(CH₂)₇ and (CH₂)₇COOH with C=C and H, H groups]`,
+options: [
 `(a) Cis-octadec-9-enoic acid`,
 `(b) Trans-octadec-9-enoic acid`,
 `(c) Oleic acid`,
-`(d) None of these`
+`(d) None of these`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`18. How many stereoisomers are there for tartaric acid?`,
-options:[
+q: `18. How many stereoisomers are there for tartaric acid?`,
+options: [
 `(a) 3`,
 `(b) 4`,
 `(c) 5`,
-`(d) 0`
+`(d) 0`,
 ],
-answer:0
+answer: 0
 },
 {
-q:`19. The number of enantiomers of the compound CH₃CHBrCHBrCOOH is`,
-options:[
+q: `19. The number of enantiomers of the compound CH₃CHBrCHBrCOOH is`,
+options: [
 `(a) 1`,
 `(b) 2`,
 `(c) 3`,
-`(d) 4`
+`(d) 4`,
 ],
-answer:3
+answer: 3
 },
 {
-q:`20. The IUPAC name of compound CH₂-CH-CH₂ with CN groups is`,
-options:[
+q: `20. The IUPAC name of compound CH₂-CH-CH₂ with CN, CN, CN groups`,
+options: [
 `(a) 1,2,3-tricyanopropane`,
 `(b) Propane-1,2,3-tricarbonitrile`,
 `(c) 3-cyanopentane-1,5-dinitrile`,
-`(d) Propane-1,2,3-trinitrile`
+`(d) Propane-1,2,3-trinitrile`,
 ],
-answer:1
+answer: 1
 },
-
-// Questions 21–50 continue below...
-  {
-q:`21. Which of the following compounds will show metamerism?`,
-options:[
+{
+q: `21. Which of the following compounds will show metamerism?`,
+options: [
 `(a) CH₃-O-C₂H₅`,
 `(b) CH₃-O-CH₃`,
 `(c) CH₃-CO-C₂H₅`,
-`(d) C₂H₅-S-C₂H₅`
+`(d) C₂H₅-S-C₂H₅`,
 ],
-answer:3
+answer: 3
 },
 {
-q:`22. What will be the IUPAC name of given compound? [branched octane structure]`,
-options:[
+q: `22. What will be the IUPAC name of given compound? [branched octane structure]`,
+options: [
 `(a) 2,5-diethyl-4-methylhexane`,
 `(b) 3,3,6-trimethyloctane`,
 `(c) 2,5,6-trimethyloctane`,
-`(d) 3,5-dimethyl-6-ethylheptane`
+`(d) 3,5-dimethyl-6-ethylheptane`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`23. In the boat conformation of cyclohexane, the most destabilizing interaction is`,
-options:[
+q: `23. In the boat conformation of cyclohexane, the most destabilizing interaction is`,
+options: [
 `(a) Eclipsing`,
 `(b) Flagpole-flagpole`,
 `(c) 1,3-diaxial`,
-`(d) 1,3-diequatorial`
+`(d) 1,3-diequatorial`,
 ],
-answer:0
+answer: 0
 },
 {
-q:`24. A similarity between optical and geometrical isomerism is that`,
-options:[
+q: `24. A similarity between optical and geometrical isomerism is that`,
+options: [
 `(a) If in a compound, one is present then so is the other`,
 `(b) Each forms equal number of isomers for a given compound`,
 `(c) Both are included in stereoisomerism`,
-`(d) They have no similarity`
+`(d) They have no similarity`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`25. The IUPAC name of CH₃COCH(CH₃)₂ is`,
-options:[
+q: `25. The IUPAC name of CH₃COCH(CH₃)₂ is`,
+options: [
 `(a) 4-methyl isopropyl ketone`,
 `(b) 3-methylbutan-2-one`,
 `(c) isopropylmethyl ketone`,
-`(d) 2-methylbutan-3-one`
+`(d) 2-methylbutan-3-one`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`26. (+)-mandelic acid has a specific rotation of +158°. What would be the observed specific rotation of a mixture containing 25% (-)-mandelic acid and 75% (+)-mandelic acid?`,
-options:[
+q: `26. (+)-mandelic acid has a specific rotation of +158°. What would be the observed specific rotation of a mixture containing 25% (-)-mandelic acid and 75% (+)-mandelic acid?`,
+options: [
 `(a) +79°`,
 `(b) -118.5°`,
 `(c) -79°`,
-`(d) +118.5°`
+`(d) +118.5°`,
 ],
-answer:0
+answer: 0
 },
 {
-q:`27. The IUPAC name of the following compound [tercyclobutane structure] is`,
-options:[
+q: `27. The IUPAC name of the following compound [tercyclobutane structure] is`,
+options: [
 `(a) Biscyclobutylcyclobutane`,
 `(b) Dicyclobutylcyclobutane`,
-`(c) 1,1',2',1''-tercyclobutane`,
-`(d) Tercyclobutane`
+`(c) 1,1&#x27;,2&#x27;,1&#x27;&#x27;-tercyclobutane`,
+`(d) Tercyclobutane`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`28. Among the following, the most stable compound is`,
-options:[
+q: `28. Among the following, the most stable compound is`,
+options: [
 `(a) Cis-1,2-cyclohexanediol`,
 `(b) Trans-1,2-cyclohexanediol`,
 `(c) Cis-1,3-cyclohexenediol`,
-`(d) Trans-1,3-cyclohexanediol`
+`(d) Trans-1,3-cyclohexanediol`,
 ],
-answer:3
+answer: 3
 },
 {
-q:`29. The number of isomers possible for C₃H₈O are`,
-options:[
+q: `29. The number of isomers possible for C₃H₈O are`,
+options: [
 `(a) 3`,
 `(b) 4`,
 `(c) 5`,
-`(d) 6`
+`(d) 6`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`30. The number of geometrical isomers of CH₃CH=CH-CH=CH-CH=CHCl are`,
-options:[
+q: `30. The number of geometrical isomers of CH₃CH=CH-CH=CH-CH=CHCl are`,
+options: [
 `(a) 4`,
 `(b) 6`,
 `(c) 8`,
-`(d) 10`
+`(d) 10`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`31. C₃H₉N cannot represent`,
-options:[
+q: `31. C₃H₉N cannot represent`,
+options: [
 `(a) Quaternary salt`,
 `(b) 1° amine`,
 `(c) 2° amine`,
-`(d) 3° amine`
+`(d) 3° amine`,
 ],
-answer:0
+answer: 0
 },
 {
-q:`32. The IUPAC name of the following compound [branched decene structure] is`,
-options:[
+q: `32. The IUPAC name of the following compound [branched decene structure]`,
+options: [
 `(a) 5,6-diethyl-8-methyldec-6-ene`,
 `(b) 5,6-diethyl-3-methyldec-4-ene`,
 `(c) 6-butyl-5-ethyl-3-methylloct-4-ene`,
-`(d) 4,5-diethyl-8-methyldec-6-ene`
+`(d) 4,5-diethyl-8-methyldec-6-ene`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`33. Which of the following is optically active?`,
-options:[
+q: `33. Which of the following is optically active?`,
+options: [
 `(a) Butane`,
 `(b) 2-methylpentane`,
 `(c) 4-methylpentane`,
-`(d) 3-methylheptane`
+`(d) 3-methylheptane`,
 ],
-answer:3
+answer: 3
 },
 {
-q:`34. The hybridization of carbon atoms in C-C single bond of HC≡C-CH=CH₂ is`,
-options:[
+q: `34. The hybridization of carbon atoms in C-C single bond of HC≡C-CH=CH₂ is`,
+options: [
 `(a) sp³-sp³`,
 `(b) sp²-sp³`,
 `(c) sp-sp²`,
-`(d) sp³-sp`
+`(d) sp³-sp`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`35. Number of stereoisomers of the compound 2-chloro-4-methylhex-2-ene is`,
-options:[
+q: `35. Number of stereoisomers of the compound, 2-chloro-4-methylhex-2-ene is`,
+options: [
 `(a) 2`,
 `(b) 4`,
 `(c) 6`,
-`(d) 7`
+`(d) 7`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`36. Number of π-electrons in cyclobutadienyl anion (C₄H₄)²⁻ is`,
-options:[
+q: `36. Number of π-electrons in cyclobutadienyl anion (C₄H₄)²⁻ is`,
+options: [
 `(a) 2`,
 `(b) 4`,
 `(c) 6`,
-`(d) 8`
+`(d) 8`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`37. Racemic mixture is formed by mixing two`,
-options:[
+q: `37. Racemic mixture is formed by mixing two`,
+options: [
 `(a) Isomeric compounds`,
 `(b) Chiral compounds`,
 `(c) Meso compounds`,
-`(d) Enantiomers with chiral carbon`
+`(d) Enantiomers with chiral carbon`,
 ],
-answer:3
+answer: 3
 },
 {
-q:`38. The number of primary amines of formula C₄H₁₁N are`,
-options:[
+q: `38. The number of primary amines of formula C₄H₁₁N are`,
+options: [
 `(a) 2`,
 `(b) 3`,
 `(c) 4`,
-`(d) 5`
+`(d) 5`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`39. The IUPAC name of the following compound [3,3-dimethylcyclohexanol structure] is`,
-options:[
+q: `39. The IUPAC name of the following compound [3,3-dimethylcyclohexanol structure]`,
+options: [
 `(a) 3,3-dimethyl-1-hydroxycyclohexane`,
 `(b) 1,1-dimethyl-3-hydroxycyclohexane`,
 `(c) 3,3-dimethyl-1-cyclohexanol`,
-`(d) 1,1-dimethyl-3-cyclohexanol`
+`(d) 1,1-dimethyl-3-cyclohexanol`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`40. The two optical isomers given below are`,
-options:[
+q: `40. The two optical isomers given below (Fischer projections of chloro compounds) are`,
+options: [
 `(a) Enantiomers`,
 `(b) Geometrical isomers`,
 `(c) Structural isomers`,
-`(d) Diastereomers`
+`(d) Diastereomers`,
 ],
-answer:3
+answer: 3
 },
 {
-q:`41. The C-C bond length of the following molecules are in the order`,
-options:[
-`(a) C₂H₆ > C₂H₄ > C₆H₆ > C₂H₂`,
-`(b) C₂H₂ > C₂H₄ > C₆H₆ > C₂H₆`,
-`(c) C₂H₆ > C₂H₄ > C₂H₂ > C₆H₆`,
-`(d) C₂H₄ > C₆H₆ > C₂H₂ > C₂H₆`
+q: `41. The C-C bond length of the following molecules are in the order`,
+options: [
+`(a) C₂H₆ &gt; C₂H₄ &gt; C₆H₆ &gt; C₂H₂`,
+`(b) C₂H₂ &gt; C₂H₄ &gt; C₆H₆ &gt; C₂H₆`,
+`(c) C₂H₆ &gt; C₂H₄ &gt; C₂H₂ &gt; C₆H₆`,
+`(d) C₂H₄ &gt; C₆H₆ &gt; C₂H₂ &gt; C₂H₆`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`42. An isomer of ethanol is`,
-options:[
+q: `42. An isomer of ethanol is`,
+options: [
 `(a) Methanol`,
 `(b) Diethyl ether`,
 `(c) Acetone`,
-`(d) Dimethyl ether`
+`(d) Dimethyl ether`,
 ],
-answer:3
+answer: 3
 },
 {
-q:`43. An organic molecule necessarily shows optical activity if it`,
-options:[
+q: `43. An organic molecule necessarily shows optical activity if it`,
+options: [
 `(a) Contains asymmetric carbon atoms`,
 `(b) Is non-planar`,
 `(c) Is non-superimposable on its mirror image`,
-`(d) Is superimposable on its mirror image`
+`(d) Is superimposable on its mirror image`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`44. The IUPAC name of the given compound [spiro compound structure] is`,
-options:[
+q: `44. The IUPAC name of the given compound [spiro compound structure]`,
+options: [
 `(a) 1,1-Cyclobutylheptane`,
 `(b) Bicyclo[6,3,0]nonane`,
 `(c) Spiro[3,6]decane`,
-`(d) Spiro[3,5]decane`
+`(d) Spiro[3,5]decane`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`45. The IUPAC name of the following compound [methylcyclohexene structure] is`,
-options:[
+q: `45. The IUPAC name of the following compound [methylcyclohexene structure]`,
+options: [
 `(a) 3-methyl cyclohexene`,
 `(b) 1-methyl cyclohex-2-ene`,
 `(c) 6-methyl cyclohexene`,
-`(d) 1-methyl cyclohex-5-ene`
+`(d) 1-methyl cyclohex-5-ene`,
 ],
-answer:0
+answer: 0
 },
 {
-q:`46. The maximum number of carbon atoms arranged linearly in the molecule CH₃-C≡C-CH=CH₂ are`,
-options:[
+q: `46. The maximum number of carbon atoms arranged linearly in the molecule, CH₃-C≡C-CH=CH₂ are`,
+options: [
 `(a) 3`,
 `(b) 4`,
 `(c) 5`,
-`(d) 6`
+`(d) 6`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`47. The IUPAC name of cinnamic acid is`,
-options:[
+q: `47. The IUPAC name of cinnamic acid is`,
+options: [
 `(a) Phenylpropanoic acid`,
 `(b) 3-phenylprop-2-enoic acid`,
 `(c) 3-phenylpropanoic acid`,
-`(d) Benzene-1,4-dicarboxylic acid`
+`(d) Benzene-1,4-dicarboxylic acid`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`48. IUPAC name of the given compound CH₃-CH(CH₃)-CH₂-CH(CN)-CH₃ is`,
-options:[
+q: `48. IUPAC name of the given compound CH₃-CH(CH₃)-CH₂-CH(CN)-CH₃`,
+options: [
 `(a) 2-cyano-4-methylpentane`,
 `(b) 2-methyl-4-cyanopentane`,
 `(c) 2,4-dimethyl pentane nitrile`,
-`(d) 2-dimethyl-4-cyanopentane`
+`(d) 2-dimethyl-4-cyanopentane`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`49. The IUPAC name of the compound CH₃-C(CH₃)₂-CH=C(CH₃)₂ is`,
-options:[
+q: `49. The IUPAC name of the compound CH₃-C(CH₃)₂-CH=C(CH₃)₂ is`,
+options: [
 `(a) 1,1,3,3-tetramethyl-but-1-ene`,
 `(b) 1,3,3-trimethyl-pent-2-ene`,
 `(c) 2,2,4-trimethylbut-4-ene`,
-`(d) 2,4,4-trimethylpent-2-ene`
+`(d) 2,4,4-trimethylpent-2-ene`,
 ],
-answer:3
+answer: 3
 },
 {
-q:`50. One recently discovered allotrope of carbon (C₆₀) is commonly known as`,
-options:[
+q: `50. One recently discovered allotrope of carbon (C₆₀) is commonly known as`,
+options: [
 `(a) Fluorine`,
 `(b) Fluorene`,
 `(c) Freon`,
-`(d) Fullerene`
+`(d) Fullerene`,
 ],
-answer:3
+answer: 3
 },
-  {
-q:`51. The optically active tartaric acid is named as D-(+)-tartaric acid because it has a positive`,
-options:[
+{
+q: `51. The optically active tartaric acid is named as D-(+)-tartaric acid because it has a positive`,
+options: [
 `(a) Optical rotation and is derived from D-glucose`,
 `(b) pH in an organic solvent`,
 `(c) Optical rotation and is derived from D-(+)-glyceraldehyde`,
-`(d) Optical rotation only when substituted by deuterium`
+`(d) Optical rotation only when substituted by deuterium`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`52. The correct IUPAC name of the compound [terphenyl structure] is`,
-options:[
+q: `52. The correct IUPAC name of the compound [terphenyl structure] is`,
+options: [
 `(a) p-phenyldiphenyl`,
 `(b) p,1-diphenylbenzene`,
-`(c) 1,1',4',1''-terphenyl`,
-`(d) terphenyl`
+`(c) 1,1&#x27;,4&#x27;,1&#x27;&#x27;-terphenyl`,
+`(d) terphenyl`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`53. Keto-enol tautomerism is observed in`,
-options:[
+q: `53. Keto-enol tautomerism is observed in`,
+options: [
 `(a) C₆H₅CHO`,
 `(b) C₆H₅OCH₃`,
 `(c) C₆H₅COCH₂COOH`,
-`(d) C₆H₅COC₆H₅`
+`(d) C₆H₅COC₆H₅`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`54. The IUPAC name of the following compound [citric acid structure] is`,
-options:[
+q: `54. The IUPAC name of the following compound [citric acid structure]`,
+options: [
 `(a) 1,2,3-tricarboxy-2-hydroxy propane`,
 `(b) 3-carboxy-3-hydroxy-1,5-pentane dioic acid`,
-`(c) 3-hydroxy-3-carboxy pentan-1,5-dioic acid`,
-`(d) 3-hydroxypropane-1,2,3-tricarboxylic acid`
+`(c) 3-hydroxy-3-carboxy pentan1,5-dioic acid`,
+`(d) 3-hydroxypropane-1,2,3-tricarboxylic acid`,
 ],
-answer:3
+answer: 3
 },
 {
-q:`55. The given compound can exhibit`,
-options:[
+q: `55. The given compound [CH₃CH₂, CH₃, C=C, H, H, C, CH₃, COOH] can exhibit`,
+options: [
 `(a) Geometrical isomerism`,
 `(b) Optical isomerism`,
 `(c) Geometrical and optical isomerism`,
-`(d) Conformational isomerism`
+`(d) Conformational isomerism`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`56. Maximum enol content is observed in`,
-options:[
+q: `56. Maximum enol content is observed in`,
+options: [
 `(a) CH₃COCH₂COOC₂H₅`,
-`(b) 1,3-cyclohexanedione`,
+`(b) 1,3-cyclohexanedione structure`,
 `(c) CH₃COCH₂COCH₃`,
-`(d) CH₃COCH₃`
+`(d) CH₃COCH₃`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`57. Assign the IUPAC name to [(CH₃)₂CH]₃COH.`,
-options:[
+q: `57. Assign the IUPAC name to [(CH₃)₂CH]₃COH.`,
+options: [
 `(a) 3-(2-methylethyl)-3(1-methylethyl) pentan-2-ol`,
 `(b) tris-(1-methylpropyl)methanol`,
 `(c) 2,4-dimethyl-3(1-methylethyl) pentan-2-ol`,
-`(d) 3-(1-methylethyl)-2,4-dimethylpentan-3-ol`
+`(d) 3-(1-methylethyl)-2,4-dimethylpentan-3-ol`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`58. Which will exhibit geometrical isomerism here?`,
-options:[
+q: `58. Which will exhibit geometrical isomerism here?`,
+options: [
 `(a) A₂C=CAB`,
 `(b) A₂C=CB₂`,
 `(c) ABC=CAB`,
-`(d) ABC=CX₂`
+`(d) ABC=CX₂`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`59. How many tertiary carbon atoms are present in the given compound?`,
-options:[
+q: `59. How many tertiary carbon atoms are present in the given compound? [bicyclic structure]`,
+options: [
 `(a) 3`,
 `(b) 4`,
 `(c) 2`,
-`(d) 5`
+`(d) 5`,
 ],
-answer:0
+answer: 0
 },
 {
-q:`60. 2-methylpenta-2,3-diene is achiral as it has`,
-options:[
+q: `60. 2-methylpenta-2,3-diene is achiral as it has`,
+options: [
 `(a) A centre of symmetry`,
 `(b) A plane of symmetry`,
 `(c) A C₂ axis of symmetry`,
-`(d) Both centre and a plane of symmetry`
+`(d) Both centre and a plane of symmetry`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`61. Which class of compound can exhibit geometrical isomerism?`,
-options:[
+q: `61. Which class of compound can exhibit geometrical isomerism?`,
+options: [
 `(a) CH₃CH=CHCH₃`,
 `(b) C₆H₅CH=NOH`,
 `(c) COOH-CH=CH-COOH`,
-`(d) All of these`
+`(d) All of these`,
 ],
-answer:3
+answer: 3
 },
 {
-q:`62. How many σ and π-bonds are there in tetracyanoethylene?`,
-options:[
+q: `62. How many σ and π-bonds are there in the molecule of tetracyanoethylene?`,
+options: [
 `(a) 9σ and 9π`,
 `(b) 5σ and 9π`,
 `(c) 9σ and 7π`,
-`(d) 5σ and 8π`
+`(d) 5σ and 8π`,
 ],
-answer:0
+answer: 0
 },
 {
-q:`63. The bond between carbon atom (1) and carbon atom (2) in compound N≡C-CH=CH₂ involves the hybridization`,
-options:[
+q: `63. The bond between carbon atom (1) and carbon atom (2) in compound N≡C-CH=CH₂ involves the hybridization`,
+options: [
 `(a) sp² and sp²`,
 `(b) sp³ and sp`,
 `(c) sp and sp²`,
-`(d) sp and sp`
+`(d) sp and sp`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`64. How many secondary carbon and hydrogen atoms are present respectively?`,
-options:[
+q: `64. How many secondary carbon and hydrogen atoms are present in the molecule given below respectively? [branched structure with Br]`,
+options: [
 `(a) 2,3`,
 `(b) 2,2`,
 `(c) 3,3`,
-`(d) 2,0`
+`(d) 2,0`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`65. Which IUPAC name is correct?`,
-options:[
+q: `65. Which IUPAC name is correct for the given compound? [OHC with CH₃ groups, diene structure]`,
+options: [
 `(a) 3,7-dimethyloct-2,6-dienal`,
 `(b) 2,6-dimethyloct-2,6-dienal-8`,
 `(c) 7-formyl-2,6-dimethylhept-2,6-diene`,
-`(d) 7-aldo-2,6-dimethylhept-2,6-diene`
+`(d) 7-aldo-2,6-dimethylhept-2,6-diene`,
 ],
-answer:0
+answer: 0
 },
 {
-q:`66. The compound given below has how many primary and secondary hydrogen atoms respectively?`,
-options:[
-`(a) 18,1`,
-`(b) 18,2`,
-`(c) 16,2`,
-`(d) 18,4`
+q: `66. The compound given below has how many primary and secondary hydrogen atoms respectively? [ester structure]`,
+options: [
+`(a) 18, 1`,
+`(b) 18, 2`,
+`(c) 16, 2`,
+`(d) 18, 4`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`67. The total number of optically active isomers for CH₂OH(CHOH)₃CHO are`,
-options:[
+q: `67. The total number of optically active isomers for CH₂OH(CHOH)₃CHO are`,
+options: [
 `(a) 16`,
 `(b) 8`,
 `(c) 4`,
-`(d) 2`
+`(d) 2`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`68. If optical rotation produced by compound (1) is 36° then the rotation produced by compound (2) is`,
-options:[
+q: `68. If optical rotation produced by compound (1) is 36° then the rotation produced by compound (2) is [Fischer projections]`,
+options: [
 `(a) -36°`,
 `(b) 0°`,
 `(c) +18°`,
-`(d) +72°`
+`(d) +72°`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`69. Total number of isomers and optically active compounds in the isomers of C₃H₅Br are`,
-options:[
-`(a) 6,4`,
-`(b) 5,3`,
-`(c) 3,5`,
-`(d) 8,3`
+q: `69. Total number of isomers and optically active compounds in the isomers of C₃H₅Br are`,
+options: [
+`(a) 6, 4`,
+`(b) 5, 3`,
+`(c) 3, 5`,
+`(d) 8, 3`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`70. On monochlorination of n-pentane, the number of isomers formed is`,
-options:[
+q: `70. On monochlorination of n-pentane, the number of isomers formed is`,
+options: [
 `(a) 4`,
 `(b) 3`,
 `(c) 2`,
-`(d) 1`
+`(d) 1`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`71. The number of possible open chain isomers for C₄H₁₀ would be`,
-options:[
+q: `71. The number of possible open chain (acyclic) isomeric compounds for molecular formula C₄H₁₀ would be`,
+options: [
 `(a) 5`,
 `(b) 6`,
 `(c) 7`,
-`(d) 4`
+`(d) 4`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`72. The IUPAC name of H₂N-N=[cyclohexane]-COOH is`,
-options:[
+q: `72. The IUPAC name of the following compound H₂N-N=[cyclohexane ring]-COOH`,
+options: [
 `(a) 4-hydrazonocyclohexane-1-carboxylic acid`,
 `(b) 4-hydrazonobenzoic acid`,
 `(c) 4-hydrazonocyclohexanoic acid`,
-`(d) 4-(n-amino)benzenecarboxylic acid`
+`(d) 4-(n-amino)benzenecarboxylic acid`,
 ],
-answer:0
+answer: 0
 },
 {
-q:`73. The compound (1) and (2) can be regarded as`,
-options:[
+q: `73. The compound (1) and (2) can be regarded as [Fischer projections shown]`,
+options: [
 `(a) Enantiomers`,
 `(b) Diastereomers`,
 `(c) Mesomers`,
-`(d) Geometrical isomer`
+`(d) Geometrical isomer`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`74. To make CH₃-CH₂-CH₂-CH₂-CH₂-CH₂-CH₃ chiral, attack should be on carbon`,
-options:[
+q: `74. Consider the following organic compound CH₃-CH₂-CH₂-CH₂-CH₂-CH₂-CH₃. To make it a chiral compound, the attack should be on carbon`,
+options: [
 `(a) 1`,
 `(b) 4`,
 `(c) 3`,
-`(d) 6`
+`(d) 6`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`75. Assign the IUPAC name for the compound with Cl-benzene-N=N-benzene-Cl`,
-options:[
+q: `75. Assign the IUPAC name for the following compound [Cl-benzene-N=N-benzene-Cl]`,
+options: [
 `(a) 3,4-dichloroazobenzene`,
 `(b) (4-chlorophenyl)(3-chlorophenyl)diazene`,
 `(c) 3,4-bis(chlorophenyl)diazene`,
-`(d) (3-chlorophenyl)(4-chlorophenyl)diazene`
+`(d) (3-chlorophenyl)(4-chlorophenyl)diazene`,
 ],
-answer:3
+answer: 3
 },
 {
-q:`76. Write the IUPAC name of the compound with CO-O-C₂H₅ and CO-Cl groups`,
-options:[
+q: `76. Write the IUPAC name of the following compound [benzoate with CO-O-C₂H₅ and CO-Cl groups]`,
+options: [
 `(a) Ethyl-2-(chlorocarbonyl)benzoate`,
 `(b) Ethyl-2-(chlorocarbonyl)hexanoate`,
 `(c) 2-(ethoxycarbonyl)benzoyl chloride`,
-`(d) None of these`
+`(d) None of these`,
 ],
-answer:0
+answer: 0
 },
 {
-q:`77. Assign the IUPAC name for the following compound`,
-options:[
+q: `77. Assign the IUPAC name for the following compound [tricyanopropane derivative]`,
+options: [
 `(a) 3-methyl hexane-1,2,3-tricarbonitrile`,
 `(b) Hexane-1,2,3-tricarbonitrile`,
 `(c) 1,2-bis(cyanomethyl)butanenitrile`,
-`(d) 3-(cyanomethyl)hexane dinitrile`
+`(d) 3-(cyanomethyl)hexane dinitrile`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`78. The IUPAC name of the compound with CONH₂ and CHO groups is`,
-options:[
+q: `78. The IUPAC name of the compound [CONH₂ and CHO groups on chain]`,
+options: [
 `(a) 6-oxo-2-methyl hex-3-enamide`,
 `(b) 6-keto-2-methyl hexanamide`,
 `(c) 2-carbamoylhexanal`,
-`(d) 2-carbamoylhex-3-enal`
+`(d) 2-carbamoylhex-3-enal`,
 ],
-answer:0
+answer: 0
 },
 {
-q:`79. The number of chiral carbon atoms in the compound is`,
-options:[
+q: `79. The number of chiral carbon atoms in the given compound [cyclohexane with Br and CH₂CH₃]`,
+options: [
 `(a) 2`,
 `(b) 3`,
 `(c) 4`,
-`(d) 1`
+`(d) 1`,
 ],
-answer:0
+answer: 0
 },
 {
-q:`80. The correct decreasing order of priority for functional groups in IUPAC system is`,
-options:[
+q: `80. The correct decreasing order of priority for the functional groups of organic compounds in the IUPAC system of nomenclature is`,
+options: [
 `(a) -COOH, -SO₃H, -CONH₂, -CHO`,
 `(b) -SO₃H, -COOH, -CONH₂, -CHO`,
 `(c) -CHO, -COOH, -SO₃H, -CONH₂`,
-`(d) -CONH₂, -CHO, -SO₃H, -COOH`
+`(d) -CONH₂, -CHO, -SO₃H, -COOH`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`81. In CH₃CHO + HCN → CH₃CH(OH)CN → CH₃CH(OH)COOH, the acid obtained would be`,
-options:[
+q: `81. In the following reaction, CH₃CHO + HCN → CH₃CH(OH)CN → CH₃CH(OH)COOH. An asymmetric centre is generated. The acid obtained would be`,
+options: [
 `(a) L-isomer`,
 `(b) D-isomer`,
-`(c) 20% D + 80% L`,
-`(d) 50% D + 50% L`
+`(c) 20% D + 80% L-isomer`,
+`(d) 50% D + 50% L-isomer`,
 ],
-answer:3
+answer: 3
 },
 {
-q:`82. Which represents hybridization sp²-sp²-sp-sp from left to right?`,
-options:[
-`(a) CH₂=CH-C≡N`,
+q: `82. Which of the following represents the given mode of hybridization sp²-sp²-sp-sp from left to right?`,
+options: [
+`(a) CH₂=CH-C≡NCH`,
 `(b) CH≡C-C≡N`,
 `(c) CH₂=C=C=CH₂`,
-`(d) Branched structure`
+`(d) CH₂=CH-CH₂ (branched)`,
 ],
-answer:0
+answer: 0
 },
 {
-q:`83. Which hydrocarbon has the lowest dipole moment?`,
-options:[
-`(a) (CH₃)₂C=C(CH₃)₂`,
+q: `83. Which of the following hydrocarbons has the lowest dipole moment?`,
+options: [
+`(a) (CH₃)₂C=C(CH₃)₂ [trans-2-butene type]`,
 `(b) CH₃-C≡C-CH₃`,
 `(c) CH₃CH₂CH=CH₂`,
-`(d) CH₂=CH-C≡CH`
+`(d) CH₂=CH-C≡CH`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`84. How many optically active isomers are possible?`,
-options:[
+q: `84. How many optically active isomers are possible for the compound shown below? [cyclohexane with CH₃, Br, CH₂Br groups]`,
+options: [
 `(a) 4`,
 `(b) 2`,
 `(c) 8`,
-`(d) 6`
+`(d) 6`,
 ],
-answer:0
+answer: 0
 },
 {
-q:`85. In CH₂=CH-CH₂-CH₂-C≡CH, the C₂-C₃ bond is`,
-options:[
+q: `85. In the compound, CH₂=CH-CH₂-CH₂-C≡CH, the C₂-C₃ bond is of the type`,
+options: [
 `(a) sp-sp²`,
 `(b) sp³-sp³`,
 `(c) sp-sp³`,
-`(d) sp²-sp³`
+`(d) sp²-sp³`,
 ],
-answer:3
+answer: 3
 },
 {
-q:`86. Which type of conformation is shown by figure 1 and 2?`,
-options:[
-`(a) 1 eclipsed, 2 staggered`,
-`(b) 1 staggered, 2 eclipsed`,
-`(c) 1 eclipsed, 2 gauche`,
-`(d) Both gauche`
+q: `86. Which type of conformation is shown by figure 1 and 2? [Newman projections]`,
+options: [
+`(a) 1 is eclipsed and 2 is staggered`,
+`(b) 1 is staggered and 2 is eclipsed`,
+`(c) 1 is eclipsed and 2 is gauche`,
+`(d) Both are gauche`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`87. An organic compound C₄H₈O is optically active. Correct structure is`,
-options:[
+q: `87. An organic compound C₄H₈O is found to be optically active. Which of the following is correct structure of the given compound?`,
+options: [
 `(a) (CH₃)₂CHCHO`,
 `(b) CH₂=CH-CH(OH)CH₃`,
 `(c) CH₃COCH₂CH₃`,
-`(d) CH₃CH₂CH₂CHO`
+`(d) CH₃CH₂CH₂CHO`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`88. Number of optical isomers formed by hydrogenation of (CH₃)₂C=CHCH₃ are`,
-options:[
+q: `88. The number of optical isomers formed by hydrogenation of the compound, (CH₃)₂C=CHCH₃ are`,
+options: [
 `(a) 0`,
 `(b) 1`,
 `(c) 2`,
-`(d) 3`
+`(d) 3`,
 ],
-answer:0
+answer: 0
 },
 {
-q:`89. Which can exhibit optical isomerism?`,
-options:[
+q: `89. Which of the following can exhibit optical isomerism? [four structures]`,
+options: [
 `(a) 1 and 2`,
 `(b) 2 and 4`,
 `(c) 3 only`,
-`(d) 2 only`
+`(d) 2 only`,
 ],
-answer:3
+answer: 3
 },
 {
-q:`90. Number and type of bonds between carbon atoms in CaC₂ are`,
-options:[
-`(a) One sigma and one π`,
-`(b) One sigma and two π`,
-`(c) One sigma and one and half π`,
-`(d) One sigma`
+q: `90. The number and type of bonds between two carbon atoms in CaC₂ are`,
+options: [
+`(a) One sigma and one π bond`,
+`(b) One sigma and two π bonds`,
+`(c) One sigma and one and a half π bonds`,
+`(d) One sigma bond`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`91. Which has least hindered rotation about C-C bond?`,
-options:[
+q: `91. Which of the following has the least hindered rotation about carbon-carbon bond?`,
+options: [
 `(a) Ethane`,
 `(b) Ethylene`,
 `(c) Acetylene`,
-`(d) Hexachloroethane`
+`(d) Hexachloroethane`,
 ],
-answer:0
+answer: 0
 },
 {
-q:`92. Correct order of ease of enolization is`,
-options:[
-`(a) 1 > 2 > 3`,
-`(b) 3 > 2 > 1`,
-`(c) 2 > 1 > 3`,
-`(d) 3 > 1 = 2`
+q: `92. Among these ketones which of the following is correct order of the case of their enolizations?`,
+options: [
+`(a) 1 &gt; 2 &gt; 3`,
+`(b) 3 &gt; 2 &gt; 1`,
+`(c) 2 &gt; 1 &gt; 3`,
+`(d) 3 &gt; 1 = 2`,
 ],
-answer:0
+answer: 0
 },
 {
-q:`93. Which does not show geometrical isomerism?`,
-options:[
+q: `93. Which of the following does not show geometrical isomerism?`,
+options: [
 `(a) 1,1-dichloro-1-pentene`,
 `(b) 1,2-dichloro-1-pentene`,
 `(c) 1,3-dichloro-1-pentene`,
-`(d) 1,4-dichloro-2-pentene`
+`(d) 1,4-dichloro-2-pentene`,
 ],
-answer:0
+answer: 0
 },
 {
-q:`94. Ibuprofen shows`,
-options:[
+q: `94. Ibuprofen has the following structure, this compound shows`,
+options: [
 `(a) Geometrical isomerism`,
 `(b) Optical isomerism`,
 `(c) Tautomerism`,
-`(d) Both`
+`(d) Both (a) and (b)`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`95. The compound with an isopropyl group is`,
-options:[
+q: `95. The compound with an isopropyl group is`,
+options: [
 `(a) 2,2,3,3-tetramethylpentane`,
 `(b) 2,2-dimethylpentane`,
 `(c) 2,2,3-trimethylpentane`,
-`(d) 2-methylpentane`
+`(d) 2-methylpentane`,
 ],
-answer:3
+answer: 3
 },
 {
-q:`96. The enolic form of acetone contains`,
-options:[
-`(a) 9σ, 1π and 2 lone pairs`,
-`(b) 8σ, 2π and 2 lone pairs`,
-`(c) 10σ, 1π and 1 lone pair`,
-`(d) 9σ, 2π and 1 lone pair`
+q: `96. The enolic form of acetone contains`,
+options: [
+`(a) 9 sigma bonds, 1 pi bond and 2 lone pair of electrons`,
+`(b) 8 sigma bonds, 2 pi bonds and 2 lone pair of electrons`,
+`(c) 10 sigma bonds, 1 pi bond and 1 lone pair of electrons`,
+`(d) 9 sigma bonds, 2 pi bonds and 1 lone pair of electrons`,
 ],
-answer:0
+answer: 0
 },
 {
-q:`97. How many chiral carbon atoms are present in 2,3,4-trichloropentane?`,
-options:[
+q: `97. How many chiral carbon atoms are present in 2,3,4-trichloropentane?`,
+options: [
 `(a) Three`,
 `(b) Two`,
 `(c) One`,
-`(d) Four`
+`(d) Four`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`98. The IUPAC name of CH₃-CH(CH₂CH₃)-CHO is`,
-options:[
+q: `98. The IUPAC name of CH₃-CH(CH₂CH₃)-CHO is`,
+options: [
 `(a) Butan-2-aldehyde`,
 `(b) 2-methylbutanal`,
 `(c) 3-methylisobutyraldehyde`,
-`(d) 3-methylbutanal`
+`(d) 3-methylbutanal`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`99. An optically active compound is`,
-options:[
+q: `99. An optically active compound is`,
+options: [
 `(a) 1-bromobutane`,
 `(b) β-bromobutyric acid`,
 `(c) 2-bromo-2-methylpropane`,
-`(d) 1-bromo-2-methylpropane`
+`(d) 1-bromo-2-methylpropane`,
 ],
-answer:3
+answer: 3
 },
 {
-q:`100. On monochlorination of 2-methylbutane, total number of chiral compounds is`,
-options:[
+q: `100. On monochlorination of 2-methyl butane, the total number of chiral compounds is`,
+options: [
 `(a) 2`,
 `(b) 4`,
 `(c) 6`,
-`(d) 8`
+`(d) 8`,
 ],
-answer:0
-},
-  {
-q:`101. The number of stereoisomers possible for 2,3-dichlorobutane is`,
-options:[
-`(a) 4`,
-`(b) 3`,
-`(c) 2`,
-`(d) 1`
-],
-answer:1
+answer: 0
 },
 {
-q:`102. The compound which shows metamerism is`,
-options:[
-`(a) C₂H₅-O-C₂H₅`,
-`(b) CH₃-CO-CH₃`,
-`(c) CH₃-CH₂-OH`,
-`(d) CH₃-CHO`
+q: `101. Which of the following compounds exhibit steroisomerism?`,
+options: [
+`(a) 2-methylbutene-1`,
+`(b) 3-methylbutyne-1`,
+`(c) 3-methylbutanoic acid`,
+`(d) 2-methylbutanoic acid`,
 ],
-answer:0
+answer: 3
 },
 {
-q:`103. Which of the following compounds shows chain isomerism?`,
-options:[
-`(a) C₄H₁₀`,
-`(b) C₂H₆O`,
-`(c) C₃H₆O`,
-`(d) C₂H₄`
+q: `102. The number of isomers for the compound with molecular formula C₂BrClFI is`,
+options: [
+`(a) 3`,
+`(b) 4`,
+`(c) 5`,
+`(d) 6`,
 ],
-answer:0
+answer: 3
 },
 {
-q:`104. The number of geometrical isomers possible for C₄H₈ is`,
-options:[
+q: `103. Which of the following compounds will exhibit geometrical isomerism?`,
+options: [
+`(a) 1-phenyl-2-butene`,
+`(b) 3-phenyl-1-butene`,
+`(c) 2-phenyl-1-butene`,
+`(d) 1,1-diphenyl-1-propene`,
+],
+answer: 0
+},
+{
+q: `104. Which of the following compounds will show geometrical isomerism? 1. 2-butene  2. propene  3. 1-phenylpropene  4. 2-methylbut-2-ene`,
+options: [
+`(a) 1, 2`,
+`(b) 3, 4`,
+`(c) 1, 2, 3`,
+`(d) 1, 3`,
+],
+answer: 3
+},
+{
+q: `105. How many optically active stereoisomers are possible for butan-2,3-diol?`,
+options: [
 `(a) 1`,
 `(b) 2`,
 `(c) 3`,
-`(d) 4`
+`(d) 4`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`105. The total number of σ and π bonds in benzene is`,
-options:[
-`(a) 12σ, 3π`,
-`(b) 6σ, 6π`,
-`(c) 12σ, 6π`,
-`(d) 9σ, 3π`
+q: `106. Choose the correct statement about the compounds A, B and C [Fischer projections]`,
+options: [
+`(a) A and B are identical`,
+`(b) A and B are diastereomers`,
+`(c) A and C are enantiomers`,
+`(d) A and B are enantiomers`,
 ],
-answer:0
+answer: 3
 },
 {
-q:`106. The hybridization of carbon in diamond is`,
-options:[
-`(a) sp`,
-`(b) sp²`,
-`(c) sp³`,
-`(d) dsp²`
-],
-answer:2
-},
-{
-q:`107. Which of the following is aromatic?`,
-options:[
-`(a) Cyclobutadiene`,
-`(b) Benzene`,
-`(c) Cyclooctatetraene`,
-`(d) Cyclopentadiene`
-],
-answer:1
-},
-{
-q:`108. Huckel’s rule is applicable to compounds having`,
-options:[
-`(a) 4n π electrons`,
-`(b) 2n π electrons`,
-`(c) (4n + 2) π electrons`,
-`(d) 6n π electrons`
-],
-answer:2
-},
-{
-q:`109. The bond angle in ethene is approximately`,
-options:[
-`(a) 180°`,
-`(b) 120°`,
-`(c) 109.5°`,
-`(d) 90°`
-],
-answer:1
-},
-{
-q:`110. The most stable conformation of ethane is`,
-options:[
-`(a) Eclipsed`,
-`(b) Staggered`,
-`(c) Gauche`,
-`(d) Skew`
-],
-answer:1
-},
-{
-q:`111. The IUPAC name of isobutane is`,
-options:[
-`(a) 2-methylpropane`,
-`(b) 2,2-dimethylethane`,
-`(c) 1-methylpropane`,
-`(d) Trimethylmethane`
-],
-answer:0
-},
-{
-q:`112. Which compound shows functional isomerism with ethanol?`,
-options:[
-`(a) Dimethyl ether`,
-`(b) Methanol`,
-`(c) Propanol`,
-`(d) Butanol`
-],
-answer:0
-},
-{
-q:`113. Which of the following has maximum boiling point?`,
-options:[
-`(a) n-butane`,
-`(b) isobutane`,
-`(c) neopentane`,
-`(d) propane`
-],
-answer:0
-},
-{
-q:`114. Which carbocation is most stable?`,
-options:[
-`(a) Primary`,
-`(b) Secondary`,
-`(c) Tertiary`,
-`(d) Methyl`
-],
-answer:2
-},
-{
-q:`115. Hyperconjugation is also known as`,
-options:[
-`(a) No bond resonance`,
-`(b) Inductive effect`,
-`(c) Electromeric effect`,
-`(d) Mesomeric effect`
-],
-answer:0
-},
-{
-q:`116. The number of resonance structures of benzene is`,
-options:[
+q: `107. The number of possible enantiomeric pairs that can be produced during monochlorination of 2-methyl butane is`,
+options: [
 `(a) 2`,
 `(b) 3`,
 `(c) 4`,
-`(d) 5`
+`(d) 1`,
 ],
-answer:0
+answer: 0
 },
 {
-q:`117. Which effect operates permanently in a molecule?`,
-options:[
-`(a) Inductive effect`,
-`(b) Electromeric effect`,
-`(c) Resonance effect`,
-`(d) Both a and c`
+q: `108. Which of the following represents the meso form of 2,3-dibromobutane? [Newman projections shown]`,
+options: [
+`(a) Structure (a)`,
+`(b) Structure (b)`,
+`(c) Structure (c)`,
+`(d) Structure (d)`,
 ],
-answer:3
+answer: 1
 },
 {
-q:`118. The bond order of O₂ molecule is`,
-options:[
+q: `109. The favoured conformation (Gauche, anti or eclipsed) for the molecule 1,2-dichloro ethene, 1,2-ethanediol and propanaldehyde will be respectively`,
+options: [
+`(a) Anti, eclipsed, gauche`,
+`(b) Anti, gauche, eclipsed`,
+`(c) Eclipsed, anti, gauche`,
+`(d) Gauche, anti, eclipsed`,
+],
+answer: 1
+},
+{
+q: `110. Which is true regarding the HOCH₂-(CHOH)₄-CH₂OH? (1) Number of racemic mixtures will be four. (2) Total optical isomers is ten, meso is two. (3) Total optical isomers is sixteen, meso is zero. (4) Optically active isomers are eight, meso isomers are two.`,
+options: [
+`(a) 1, 2 and 3`,
+`(b) 2, 3 and 4`,
+`(c) 1, 2 and 4`,
+`(d) 1 and 2 only`,
+],
+answer: 2
+},
+{
+q: `111. Consider the following compounds given below and select the correct statement. [Four structures shown]`,
+options: [
+`(a) Except (I) all have stereogenic centre`,
+`(b) All have stereogenic centre`,
+`(c) All have plane of symmetry`,
+`(d) Only II and III have stereogenic centre`,
+],
+answer: 0
+},
+{
+q: `112. Match the following: [List I: CH₃COOH/HCOOCH₃; CH₃CH₂C≡CH/CH₃C=C-CH₃; CH₃CH₂CH₂NH₂/CH₃CH(NH₂)CH₃; CH₃CH₂OH/(CH₃)₂O] [List II: (i) Metamers (ii) Position isomers (iii) Tautomers (iv) Functional isomer]`,
+options: [
+`(a) (iii)(iv)(i)(iv)`,
+`(b) (i)(ii)(iii)(iv)`,
+`(c) (iii)(ii)(i)(iv)`,
+`(d) (iv)(ii)(ii)(iv)`,
+],
+answer: 3
+},
+{
+q: `113. Consider the following statements: (1) Racemic forms are not optically active but are resolvable. (2) The presence of chiral atom is sufficient but not the necessary condition for enantiomer. (3) Meso compounds are inactive and are not resolvable. (4) Conformational enantiomers can be resolved.`,
+options: [
+`(a) 1, 2 and 3`,
+`(b) 2, 3 and 4`,
+`(c) 1, 2 and 4`,
+`(d) 1, 2, 3 and 4`,
+],
+answer: 3
+},
+{
+q: `114. Identify E and Z configurations of the following four structures`,
+options: [
+`(a) 1(E), 2(Z), 3(E), 4(Z)`,
+`(b) 1(Z), 2(E), 3(Z), 4(E)`,
+`(c) 1(Z), 2(Z), 3(E), 4(E)`,
+`(d) 1(Z), 2(Z), 3(E), 4(Z)`,
+],
+answer: 2
+},
+{
+q: `115. Which is incorrectly matched? [Common name vs IUPAC name]`,
+options: [
+`(a) Vanillin / 4-hydroxy-3-methoxybenzaldehyde`,
+`(b) Protocatechual-dehyde / 2,3-dihydroxybenzaldehyde`,
+`(c) Adipic acid / Hexan1,6-dioic acid`,
+`(d) Pyruvic acid / Cis-2-methyl-but-2-enoic acid`,
+],
+answer: 1
+},
+{
+q: `116. How many structural and geometrical isomers are possible for dimethyl cyclohexane?`,
+options: [
+`(a) 3, 3`,
+`(b) 3, 6`,
+`(c) 6, 6`,
+`(d) 6, 3`,
+],
+answer: 1
+},
+{
+q: `117. Consider the following statements about chirality: 1. Molecules which are not superimposable on their mirror images are achiral. 2. A chiral molecule can have simple axis of symmetry. 3. A carbon atom to which four different species are attached is a chiral centre. 4. A compound whose molecules are achiral exhibits optical activity. Which of the statements are correct?`,
+options: [
+`(a) 1, 2 and 4`,
+`(b) 2, 3 and 4`,
+`(c) 2 and 3`,
+`(d) 1 and 4`,
+],
+answer: 2
+},
+{
+q: `118. The compound, whose stereochemical formula is shown, exhibits A-geometrical isomers and B-optical isomers. The values of A and B are`,
+options: [
+`(a) 4 and 4`,
+`(b) 4 and 2`,
+`(c) 2 and 4`,
+`(d) 2 and 2`,
+],
+answer: 1
+},
+{
+q: `119. The correct statements about the compounds A, B and C are [Fischer projections]`,
+options: [
+`(a) A and B are identical`,
+`(b) A and B are enantiomers`,
+`(c) A and C are enantiomers`,
+`(d) A and B are diastereomers`,
+],
+answer: 1
+},
+{
+q: `120. Tautomerism is exhibited by which of the following compounds? [four structures including benzaldehyde, cyclohexanedione types]`,
+options: [
+`(a) 1, 2 and 3`,
+`(b) 1 and 3`,
+`(c) 1 and 2`,
+`(d) 1, 2, 3 and 4`,
+],
+answer: 0
+},
+{
+q: `121. Which of the following compounds are chiral? [four structures with allenes]`,
+options: [
+`(a) 2 and 4`,
+`(b) 2 and 3`,
+`(c) 2, 3 and 4`,
+`(d) Only 2`,
+],
+answer: 3
+},
+{
+q: `122. Match the following: [List I: structures; List II: IUPAC names - (i) 2-methylprop-1-ene (ii) But-1-ene (iii) Cis-but-2-ene (iv) Trans-but-2-ene]`,
+options: [
+`(a) (iii)(ii)(iv)(i)`,
+`(b) (ii)(iii)(i)(iv)`,
+`(c) (iii)(iv)(ii)(i)`,
+`(d) (ii)(iv)(i)(iii)`,
+],
+answer: 1
+},
+{
+q: `123. Which of the following compound will exhibit optical isomerism?`,
+options: [
+`(a) 1 and 3`,
+`(b) 1 and 2`,
+`(c) 1, 2 and 4`,
+`(d) 1 only`,
+],
+answer: 1
+},
+{
+q: `124. Which of the following have asymmetric carbon atoms? 1. ClCH₂-CH₂Br  2. CH₃-CHCl₂  3. CH₃-CHDCl  4. CH₂Br-CHOH-CH₃`,
+options: [
+`(a) 1, 2, 3`,
+`(b) 1, 3, 4`,
+`(c) 2, 3`,
+`(d) 3, 4`,
+],
+answer: 3
+},
+{
+q: `125. Tautomerism is exhibited by [four structures]`,
+options: [
+`(a) 1 and 2`,
+`(b) 1, 3 and 4`,
+`(c) 1, 2 and 4`,
+`(d) 1, 2, 3 and 4`,
+],
+answer: 1
+},
+{
+q: `126. Underlined carbon is sp hybridized in`,
+options: [
+`(a) CH₃CH=CH₂`,
+`(b) CH₃CH₂NH₂`,
+`(c) CH₃CONH₂`,
+`(d) CH₃CH₂CN`,
+],
+answer: 3
+},
+{
+q: `127. The incorrect IUPAC name is`,
+options: [
+`(a) CH₃CH₂CH₂COC₂H₅ / ethyl butanoate`,
+`(b) CH₃CH(CH₃)CH₂CHO / 3-methyl butanal`,
+`(c) CH₃CH(CH₃)COCH₂CH₃ / 2-methyl-3-pentanone`,
+`(d) CH₃CH(CH₃)CH(OH)CH₃ / 2-methyl-3-butanol`,
+],
+answer: 3
+},
+{
+q: `128. Following types of compounds [cyclopentane and methylcyclobutane] are studied under which type of isomerism?`,
+options: [
+`(a) Chain isomerism`,
+`(b) Position isomerism`,
+`(c) Conformers`,
+`(d) Stereoisomerism`,
+],
+answer: 0
+},
+{
+q: `129. Among the following four structures 1 to 4: (1) C₂H₅-CH(CH₃)-C₃H₇ (2) CH₃-CO-CH(CH₃)-C₂H₅ (3) H-C⁺ (carbocation) (4) C₂H₅-CH-C₂H₅. It is true that`,
+options: [
+`(a) All four are chiral compounds`,
+`(b) Only 1 and II are chiral compounds`,
+`(c) Only III is a chiral compound`,
+`(d) Only II and IV are chiral compounds`,
+],
+answer: 1
+},
+{
+q: `130. Amongst the following compounds, the optically active alkane having lowest molecular mass is`,
+options: [
+`(a) CH₃-CH₂-CH₂-CH₃`,
+`(b) CH₃-CH₂-CH(CH₃)-CH₃`,
+`(c) 2-cyclopropylbutane`,
+`(d) CH₃-CH₂-C≡CH`,
+],
+answer: 2
+},
+{
+q: `131. Which of the following molecules is expected to rotate the plane of plane polarized light? [four structures shown]`,
+options: [
+`(a) Structure (a)`,
+`(b) Structure (b)`,
+`(c) Structure (c) [H₂N-COOH-H Fischer]`,
+`(d) Structure (d) [HO-H with CH₂OH Fischer]`,
+],
+answer: 3
+},
+{
+q: `132. Which one of the following conformations of cyclohexane is chiral?`,
+options: [
+`(a) Rigid`,
+`(b) Chair`,
+`(c) Boat`,
+`(d) Twist boat`,
+],
+answer: 3
+},
+{
+q: `133. The absolute configuration of [HO₂C/CO₂H, HO/H groups structure] is`,
+options: [
+`(a) S, S`,
+`(b) R, R`,
+`(c) R, S`,
+`(d) S, R`,
+],
+answer: 1
+},
+{
+q: `134. Which of the following will have a meso isomer also?`,
+options: [
+`(a) 2-chlorobutane`,
+`(b) 2,3-dichlorobutane`,
+`(c) 2,3-dichloropropane`,
+`(d) 2-hydroxypropanoic acid`,
+],
+answer: 1
+},
+{
+q: `135. The IUPAC name of [spiro compound with ethyl and methyl groups] is`,
+options: [
+`(a) 4,4-dimethyl-5-diethyl pentane`,
+`(b) 5,5-diethyl-4,4-dimethyl pentane`,
+`(c) 3-ethyl-4,4-dimethyl heptane`,
+`(d) 1,1-diethyl-2,2-dimethyl pentane`,
+],
+answer: 2
+},
+{
+q: `136. Increasing order of stability among the three main conformations (eclipse, anti, gauche) of 2-fluoroethanol is`,
+options: [
+`(a) eclipse, gauche, anti`,
+`(b) gauche, eclipse, anti`,
+`(c) eclipse, anti, gauche`,
+`(d) anti, gauche, eclipse`,
+],
+answer: 2
+},
+{
+q: `137. Which types of isomerism is shown by 2,3-dichlorobutane?`,
+options: [
+`(a) diastereo`,
+`(b) optical`,
+`(c) geometric`,
+`(d) structural`,
+],
+answer: 1
+},
+{
+q: `138. The structure of cis bis(propenyl) ethene can be given as [four structures shown]`,
+options: [
+`(a) Structure (a)`,
+`(b) Structure (b)`,
+`(c) Structure (c)`,
+`(d) Structure (d)`,
+],
+answer: 2
+},
+{
+q: `139. [Alkyne-alkene compound with Me, H groups]. Hydrogenation of this compound in presence of poisoned &#x27;Pd&#x27; catalyst gives`,
+options: [
+`(a) An optically active compound`,
+`(b) A racemic mixture`,
+`(c) A diastereomeric mixture`,
+`(d) An optically inactive compound`,
+],
+answer: 3
+},
+{
+q: `140. In the given conformation, C₂ is rotated about C₂-C₃ bond anti-clockwise by an angle of 120° then the formation obtained is [Newman projection shown]`,
+options: [
+`(a) Staggered conformation`,
+`(b) Gauche conformation`,
+`(c) Fully eclipsed conformation`,
+`(d) Partially eclipsed conformation`,
+],
+answer: 1
+},
+{
+q: `141. The two isomers given below are [Fischer projections]`,
+options: [
+`(a) Enantiomer`,
+`(b) Diastereomer`,
+`(c) Mesomer`,
+`(d) Epimer`,
+],
+answer: 1
+},
+{
+q: `142. How many isomers are possible for methyl anthracene?`,
+options: [
 `(a) 1`,
 `(b) 2`,
 `(c) 3`,
-`(d) 1.5`
+`(d) 4`,
 ],
-answer:1
+answer: 2
 },
 {
-q:`119. Which of the following is a nucleophile?`,
-options:[
-`(a) NH₃`,
-`(b) BF₃`,
-`(c) AlCl₃`,
-`(d) H⁺`
+q: `143. [Cyclohexane with OH and NH₂ groups]. How many stereoisomers are possible for this compound?`,
+options: [
+`(a) 2`,
+`(b) 3`,
+`(c) 4`,
+`(d) 6`,
 ],
-answer:0
+answer: 2
 },
 {
-q:`120. The reaction intermediate in SN1 reaction is`,
-options:[
-`(a) Free radical`,
-`(b) Carbocation`,
-`(c) Carbanion`,
-`(d) Carbene`
+q: `144. CH₃-CH(NH₂)-CH=CH₂ has geometrical and optical isomers respectively?`,
+options: [
+`(a) 1, 1`,
+`(b) 2, 2`,
+`(c) 0, 1`,
+`(d) 0, 2`,
 ],
-answer:1
+answer: 3
 },
 {
-q:`121. Which reaction follows first order kinetics?`,
-options:[
-`(a) SN1`,
-`(b) SN2`,
-`(c) E2`,
-`(d) Addition`
+q: `145. Which of the following compound can have chiral C-atom? [four structures shown]`,
+options: [
+`(a) Structure (a)`,
+`(b) Structure (b)`,
+`(c) Structure (c)`,
+`(d) Structure (d)`,
 ],
-answer:0
+answer: 2
 },
 {
-q:`122. In SN2 reaction, configuration of product is`,
-options:[
-`(a) Retained`,
-`(b) Inverted`,
-`(c) Racemic`,
-`(d) Unchanged`
+q: `146. How many p⁰, s⁰ C-atoms are present in the given compound here respectively? [branched structure]`,
+options: [
+`(a) 2, 2`,
+`(b) 3, 2`,
+`(c) 3, 3`,
+`(d) 3, 1`,
 ],
-answer:1
+answer: 3
 },
 {
-q:`123. Which reagent is used for ozonolysis?`,
-options:[
-`(a) O₃`,
-`(b) KMnO₄`,
-`(c) H₂SO₄`,
-`(d) NaOH`
+q: `1. But-2-ene exhibits cis-trans-isomerism due to`,
+options: [
+`(a) Rotation around C₃-C₄ sigma bond`,
+`(b) Rotation around C₁-C₂ bond`,
+`(c) Restricted rotation around C=C bond`,
+`(d) Rotation around C₂-C₃ double bond`,
 ],
-answer:0
+answer: 2
 },
 {
-q:`124. Which of the following gives iodoform test?`,
-options:[
-`(a) Ethanol`,
-`(b) Methanol`,
-`(c) Formic acid`,
-`(d) Benzene`
+q: `2. Dihedral angle in staggered form of ethane is`,
+options: [
+`(a) 0°`,
+`(b) 60°`,
+`(c) 120°`,
+`(d) 180°`,
 ],
-answer:0
+answer: 1
 },
 {
-q:`125. Lucas test is used to distinguish`,
-options:[
-`(a) Aldehydes and ketones`,
-`(b) Primary, secondary and tertiary alcohols`,
-`(c) Alkanes and alkenes`,
-`(d) Acids and bases`
+q: `3. The (R)- and (S)-enantiomers of an optically active compound differ in`,
+options: [
+`(a) their optical rotation of plane polarized light`,
+`(b) their reactivity with a chiral reagent`,
+`(c) their solubility in achiral reagents`,
+`(d) their melting points`,
 ],
-answer:1
+answer: 0
 },
 {
-q:`126. Tollens’ reagent is used to detect`,
-options:[
-`(a) Ketones`,
-`(b) Alcohols`,
-`(c) Aldehydes`,
-`(d) Alkanes`
+q: `4. A compound with molecular formula C₇H₁₆ shows optical isomerism, the compound will be`,
+options: [
+`(a) 2-methylhexane`,
+`(b) 2,2-dimethylpentane`,
+`(c) 2,3-dimethylpentane`,
+`(d) None of these`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`127. Fehling’s solution gives positive test with`,
-options:[
-`(a) Aromatic aldehydes`,
-`(b) Aliphatic aldehydes`,
-`(c) Ketones`,
-`(d) Alcohols`
+q: `5. CH₃-CH₂-CH(Cl)-CH₃ obtained by chlorination of n-butane, will be`,
+options: [
+`(a) meso-form`,
+`(b) racemic mixture`,
+`(c) d-form`,
+`(d) l-form`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`128. Which compound undergoes Cannizzaro reaction?`,
-options:[
-`(a) Formaldehyde`,
-`(b) Acetaldehyde`,
-`(c) Acetone`,
-`(d) Propanal`
+q: `6. The incorrect IUPAC name is`,
+options: [
+`(a) CH₃-CH(CH₃)-CH(CH₂CH₃)-CH₃ / 2,3-dimethyl pentane`,
+`(b) CH₃-C(=O)-CH(CH₃)-CH₃ / 2-methyl-3-butanone`,
+`(c) CH₃-CH(Cl)-CH(Br)-CH₃ / 2-bromo-3-chloro butane`,
+`(d) CH₃-C≡CCH(CH₃)₂ / 4-methyl-2-pentyne`,
 ],
-answer:0
+answer: 1
 },
 {
-q:`129. Which reaction involves free radical mechanism?`,
-options:[
-`(a) Halogenation of alkane`,
-`(b) SN1`,
-`(c) SN2`,
-`(d) Esterification`
+q: `7. IUPAC name of the following compound CH₂=CH-CH₂-CH₂-C≡CH is`,
+options: [
+`(a) 1-hexyne-5-ene`,
+`(b) 1,5-hexynyne`,
+`(c) 1,5-hexenyne`,
+`(d) 1-hexene-5-yne`,
 ],
-answer:0
+answer: 3
 },
 {
-q:`130. The functional group of carboxylic acid is`,
-options:[
-`(a) -CHO`,
-`(b) -COOH`,
-`(c) -CO-`,
-`(d) -OH`
+q: `8. Geometrical isomers are differ in`,
+options: [
+`(a) Length of carbon chain`,
+`(b) Spatial arrangement of atoms`,
+`(c) Position of functional group`,
+`(d) Position of atoms`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`131. Which acid is strongest?`,
-options:[
-`(a) CH₃COOH`,
-`(b) ClCH₂COOH`,
-`(c) CH₃CH₂COOH`,
-`(d) HCOOH`
+q: `9. Name of the compound given below [2,2,3-trimethylbutane structure] is`,
+options: [
+`(a) 3-methyl-4-ethyloctane`,
+`(b) 4-ethyl-1,3-methyloctane`,
+`(c) 2,3-diethylheptane`,
+`(d) 5-ethyl-6-methyloctane`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`132. Decarboxylation of sodium acetate gives`,
-options:[
-`(a) Methane`,
-`(b) Ethane`,
-`(c) Propane`,
-`(d) Butane`
+q: `10. Which of the following pairs of compounds are enantiomers? [Fischer projections shown]`,
+options: [
+`(a) Pair (a)`,
+`(b) Pair (b)`,
+`(c) Pair (c)`,
+`(d) Pair (d)`,
 ],
-answer:0
+answer: 1
 },
 {
-q:`133. Which compound forms amide on reaction with NH₃?`,
-options:[
-`(a) Acid chloride`,
-`(b) Alcohol`,
-`(c) Alkene`,
-`(d) Ether`
+q: `11. The molecular formula of diphenyl methane is C₁₃H₁₂. How many structural isomers are possible when one of the hydrogen is replaced by a chlorine atom?`,
+options: [
+`(a) 4`,
+`(b) 6`,
+`(c) 7`,
+`(d) 8`,
 ],
-answer:0
+answer: 0
 },
 {
-q:`134. Which reagent converts alcohol to alkyl chloride?`,
-options:[
-`(a) SOCl₂`,
-`(b) NaOH`,
-`(c) H₂`,
-`(d) KMnO₄`
+q: `12. The chirality of the compound [H₃C/Cl/Br/H structure] is`,
+options: [
+`(a) E`,
+`(b) R`,
+`(c) Z`,
+`(d) S`,
 ],
-answer:0
+answer: 1
 },
 {
-q:`135. Grignard reagent reacts with CO₂ to form`,
-options:[
-`(a) Alcohol`,
-`(b) Ketone`,
-`(c) Carboxylic acid`,
-`(d) Aldehyde`
+q: `13. IUPAC names of some compounds are given. Which one of the following is not correct?`,
+options: [
+`(a) CH₃-C≡C-CH(CH₃)₂ / 4-methyl-2-pentyne`,
+`(b) CH₃-CH₂-C(=CH₂)-CH(CH₃)... / 2-ethyl-3-methyl-but-1-ene`,
+`(c) [compound] / 3-ethyl-4-methylheptane`,
+`(d) CH₃-CH(OH)-CH(CH₃)-CH₃ / 3-methyl-2-butanol`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`136. Which compound shows keto-enol tautomerism?`,
-options:[
-`(a) CH₃COCH₃`,
-`(b) CH₄`,
-`(c) C₂H₆`,
-`(d) C₂H₄`
+q: `14. Which one of the following pairs represents stereo-isomerism?`,
+options: [
+`(a) Chain isomerism and rotational isomerism`,
+`(b) Optical isomerism and geometrical isomerism`,
+`(c) Structural isomerism and geometrical isomerism`,
+`(d) Linkage isomerism and geometrical isomerism`,
 ],
-answer:0
+answer: 1
 },
 {
-q:`137. Which hydrocarbon undergoes addition reaction easily?`,
-options:[
-`(a) Alkane`,
-`(b) Alkene`,
-`(c) Alkyne`,
-`(d) Benzene`
+q: `15. Which of the following is not chiral?`,
+options: [
+`(a) 3-bromopentane`,
+`(b) 2-hydroxypropanoic acid`,
+`(c) 2-butanol`,
+`(d) 2,3-dibromopentane`,
 ],
-answer:1
+answer: 0
 },
 {
-q:`138. Markovnikov’s rule is applicable to`,
-options:[
-`(a) Elimination reaction`,
-`(b) Addition of HX to alkene`,
-`(c) Substitution reaction`,
-`(d) Polymerization`
+q: `16. The IUPAC name of [Cl, O groups on branched chain structure]`,
+options: [
+`(a) 2-ethyl-3methylbutanoyl chloride`,
+`(b) 2,3-dimethylpentanoyl chloride`,
+`(c) 3,4-dimethylpentanoyl chloride`,
+`(d) 1-chloro-1-oxo-2,3-dimethylpentane`,
 ],
-answer:1
+answer: 1
 },
 {
-q:`139. Anti-Markovnikov addition occurs in presence of`,
-options:[
-`(a) Peroxide`,
-`(b) Acid`,
-`(c) Base`,
-`(d) Catalyst`
+q: `17. CH₃CHCl-CH₂-CH₃ has a chiral centre. Which one of the following represents its R configuration? [four structures shown]`,
+options: [
+`(a) Structure (a)`,
+`(b) Structure (b)`,
+`(c) Structure (c)`,
+`(d) Structure (d)`,
 ],
-answer:0
+answer: 2
 },
 {
-q:`140. Which compound polymerizes to form polythene?`,
-options:[
-`(a) Ethene`,
-`(b) Ethane`,
-`(c) Ethyne`,
-`(d) Benzene`
+q: `18. If there is no rotation of plane polarized light by a compound in a specific solvent, thought to be chiral, it may mean that:`,
+options: [
+`(a) the compound is certainly a chiral`,
+`(b) the compound is certainly meso`,
+`(c) there is no compound is the solvent`,
+`(d) the compound may be a racemic mixture`,
 ],
-answer:0
+answer: 1
 },
 {
-q:`141. Which compound is a reducing sugar?`,
-options:[
-`(a) Glucose`,
-`(b) Sucrose`,
-`(c) Starch`,
-`(d) Cellulose`
+q: `19. Base strength of H₃C⁺CH₂, H₂C=CH₂, H-C≡C⁻ is in the order of:`,
+options: [
+`(a) (a) &gt; (c) &gt; (b)`,
+`(b) (a) &gt; (b) &gt; (c)`,
+`(c) (b) &gt; (a) &gt; (c)`,
+`(d) (c) &gt; (b) &gt; (a)`,
 ],
-answer:0
+answer: 1
 },
 {
-q:`142. Which vitamin is water soluble?`,
-options:[
-`(a) Vitamin A`,
-`(b) Vitamin D`,
-`(c) Vitamin C`,
-`(d) Vitamin K`
+q: `20. How many stereoisomers does this molecule have? CH₃CH=CHCH₂CHBrCH₃`,
+options: [
+`(a) 8`,
+`(b) 2`,
+`(c) 4`,
+`(d) 6`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`143. Which polymer is biodegradable?`,
-options:[
-`(a) PVC`,
-`(b) Nylon`,
-`(c) PHBV`,
-`(d) Bakelite`
+q: `21. The IUPAC name of the compound having the formula CH≡C-CH=CH₂ is`,
+options: [
+`(a) 1-butyn-3-ene`,
+`(b) but-1-yne-3-ene`,
+`(c) 1-butene-3-yne`,
+`(d) 3-butene-1-yne`,
 ],
-answer:2
+answer: 2
 },
 {
-q:`144. Which fibre is synthetic?`,
-options:[
-`(a) Cotton`,
-`(b) Wool`,
-`(c) Nylon`,
-`(d) Silk`
+q: `22. Which of the following compound will exhibit cis-trans (geometrical) isomerism?`,
+options: [
+`(a) 2-Butene`,
+`(b) Butanol`,
+`(c) 2-Butyne`,
+`(d) 2-Butenol`,
 ],
-answer:2
+answer: 0
 },
 {
-q:`145. Which gas is evolved during fermentation?`,
-options:[
-`(a) O₂`,
-`(b) CO₂`,
-`(c) H₂`,
-`(d) N₂`
+q: `23. In the following, the most stable conformation of n-butane is [Newman projections shown]`,
+options: [
+`(a) Structure (a)`,
+`(b) Structure (b)`,
+`(c) Structure (c)`,
+`(d) Structure (d)`,
 ],
-answer:1
+answer: 2
 },
 {
-q:`146. Which compound is used as antiseptic?`,
-options:[
-`(a) Phenol`,
-`(b) Methane`,
-`(c) Ethane`,
-`(d) Propane`
+q: `24. Which of the following conformers for ethylene glycol is most stable? [Newman projections shown]`,
+options: [
+`(a) Structure (a)`,
+`(b) Structure (b)`,
+`(c) Structure (c)`,
+`(d) Structure (d)`,
 ],
-answer:0
+answer: 3
 },
 {
-q:`147. Which compound is used in dry cleaning?`,
-options:[
-`(a) Benzene`,
-`(b) Toluene`,
-`(c) CCl₄`,
-`(d) Ethanol`
+q: `25. The IUPAC name of the compound CH₃CH=CHC≡CH is`,
+options: [
+`(a) Pent-4-yn-2-ene`,
+`(b) Pent-3-en-1-yne`,
+`(c) Pent-2-en-4-ene`,
+`(d) Pent-1-yn-3-ene`,
 ],
-answer:2
+answer: 1
 },
 {
-q:`148. Which compound is a haloform?`,
-options:[
-`(a) CHCl₃`,
-`(b) CH₄`,
-`(c) C₂H₆`,
-`(d) C₂H₄`
+q: `26. The correct order of increasing bond length of C-H, C-O, C-C and C=C is`,
+options: [
+`(a) C-H &lt; C=C &lt; C-O &lt; C-C`,
+`(b) C-H &lt; C-C &lt; C-C &lt; C=C`,
+`(c) C-O &lt; C-H &lt; C-C &lt; C=C`,
+`(d) C-C &lt; C=C &lt; C-O &lt; C-H`,
 ],
-answer:0
+answer: 0
 },
 {
-q:`149. Which compound is used as refrigerant?`,
-options:[
-`(a) Freon`,
-`(b) Methane`,
-`(c) Ethanol`,
-`(d) Propane`
+q: `27. The correct IUPAC name of the compound [branched hexene structure with propyl and ethyl groups]`,
+options: [
+`(a) 4-ethyl-3-propyl hex-1-ene`,
+`(b) 3-(1-ethyl propyl)hex-1-ene`,
+`(c) 3-ethyl-4-propyl hex-5-ene`,
+`(d) 3-ethyl-4-ethenyl heptane`,
 ],
-answer:0
+answer: 0
 },
 {
-q:`150. Which compound is used in manufacture of urea?`,
-options:[
-`(a) NH₃`,
-`(b) CO₂`,
-`(c) Both NH₃ and CO₂`,
-`(d) O₂`
+q: `28. Which nomenclature is not according to IUPAC system?`,
+options: [
+`(a) Br-CH₂-CH=CH₂ / 1-Bromo prop-2-exe`,
+`(b) [branched structure] / 4-Bromo 2,4-dimethyl hexane`,
+`(c) [structure] / 5-Oxohexanoic acid`,
+`(d) All are correct`,
 ],
-answer:2
+answer: 0
 },
-  {
-q:`151. Which compound is used as analgesic?`,
-options:[
-`(a) Aspirin`,
-`(b) Methane`,
-`(c) Ethane`,
-`(d) Propane`
-],
-answer:0
-},
-{
-q:`152. Which compound is used as antacid?`,
-options:[
-`(a) NaHCO₃`,
-`(b) HCl`,
-`(c) H₂SO₄`,
-`(d) CH₃COOH`
-],
-answer:0
-},
-{
-q:`153. Which of the following is a thermoplastic polymer?`,
-options:[
-`(a) Bakelite`,
-`(b) PVC`,
-`(c) Melamine`,
-`(d) Urea-formaldehyde`
-],
-answer:1
-},
-{
-q:`154. Which of the following is a thermosetting polymer?`,
-options:[
-`(a) Polythene`,
-`(b) PVC`,
-`(c) Bakelite`,
-`(d) Nylon`
-],
-answer:2
-},
-{
-q:`155. Which compound is used in preparation of TNT?`,
-options:[
-`(a) Toluene`,
-`(b) Benzene`,
-`(c) Phenol`,
-`(d) Aniline`
-],
-answer:0
-},
-{
-q:`156. Which compound is an example of azo dye?`,
-options:[
-`(a) Methyl orange`,
-`(b) Phenol`,
-`(c) Acetone`,
-`(d) Methane`
-],
-answer:0
-},
-{
-q:`157. Which compound is used as moth repellent?`,
-options:[
-`(a) Naphthalene`,
-`(b) Benzene`,
-`(c) Ethanol`,
-`(d) Acetone`
-],
-answer:0
-},
-{
-q:`158. Which compound is used in preparation of soap?`,
-options:[
-`(a) Fat`,
-`(b) Alkene`,
-`(c) Alcohol`,
-`(d) Ether`
-],
-answer:0
-},
-{
-q:`159. Which reaction is used in preparation of soap?`,
-options:[
-`(a) Saponification`,
-`(b) Hydrogenation`,
-`(c) Polymerization`,
-`(d) Addition`
-],
-answer:0
-},
-{
-q:`160. Which compound is used as local anaesthetic?`,
-options:[
-`(a) Cocaine`,
-`(b) Ethane`,
-`(c) Methane`,
-`(d) Benzene`
-],
-answer:0
-},
-{
-q:`161. Which compound is used as general anaesthetic?`,
-options:[
-`(a) Chloroform`,
-`(b) Methane`,
-`(c) Ethane`,
-`(d) Ethene`
-],
-answer:0
-},
-{
-q:`162. Which compound is used in manufacture of Bakelite?`,
-options:[
-`(a) Phenol and formaldehyde`,
-`(b) Ethene`,
-`(c) Propene`,
-`(d) Benzene`
-],
-answer:0
-},
 {
-q:`163. Which polymer is used in making ropes?`,
-options:[
-`(a) Nylon`,
-`(b) PVC`,
-`(c) Bakelite`,
-`(d) Teflon`
+q: `29. Which of the following acid does not exhibit optical isomerism?`,
+options: [
+`(a) malic acid`,
+`(b) lactic acid`,
+`(c) tartaric acid`,
+`(d) α-amino acid`,
 ],
-answer:0
+answer: 0
 },
 {
-q:`164. Which compound is used as preservative?`,
-options:[
-`(a) Sodium benzoate`,
-`(b) Methane`,
-`(c) Ethanol`,
-`(d) Propane`
+q: `30. The structure of isobutyl group in an organic compound is?`,
+options: [
+`(a) (CH₃)₂CH-CH₂-`,
+`(b) CH₃-CH₂-CH₂-CH₂-`,
+`(c) CH₃-CH(CH₂CH₃)-`,
+`(d) (CH₃)₃C-`,
 ],
-answer:0
+answer: 0
 },
 {
-q:`165. Which compound is used as artificial sweetener?`,
-options:[
-`(a) Saccharin`,
-`(b) Glucose`,
-`(c) Fructose`,
-`(d) Sucrose`
+q: `31. The order of stability of the following tautomeric compound is? [three tautomers shown]`,
+options: [
+`(a) 1 &gt; 2 &gt; 3`,
+`(b) 2 &gt; 1 &gt; 3`,
+`(c) 2 &gt; 3 &gt; 1`,
+`(d) 3 &gt; 2 &gt; 1`,
 ],
-answer:0
+answer: 3
 },
 {
-q:`166. Which compound is biodegradable polymer?`,
-options:[
-`(a) PHBV`,
-`(b) PVC`,
-`(c) Nylon`,
-`(d) Bakelite`
+q: `32. Which of the given compounds can exhibit tautomerism? [three structures]`,
+options: [
+`(a) 1 and 2`,
+`(b) 2 and 3`,
+`(c) 1 and 3`,
+`(d) 1, 2 and 3`,
 ],
-answer:0
+answer: 3
 },
 {
-q:`167. Which compound is used as explosive?`,
-options:[
-`(a) Nitroglycerine`,
-`(b) Methane`,
-`(c) Ethane`,
-`(d) Propane`
+q: `33. The enolic form of ethylacetoacetate as shown below has:`,
+options: [
+`(a) 16 sigma bonds and 1 Pi-Bond`,
+`(b) 18 sigma bonds and 2 Pi-Bond`,
+`(c) 9 sigma bonds and 2 Pi-Bond`,
+`(d) 9 sigma bonds and 1 Pi-Bond`,
 ],
-answer:0
+answer: 1
 },
 {
-q:`168. Which compound is used in silvering of mirror?`,
-options:[
-`(a) Formaldehyde`,
-`(b) Methane`,
-`(c) Benzene`,
-`(d) Ethane`
+q: `34. The number of structural isomers possible from the molecular formula C₃H₉N is:`,
+options: [
+`(a) 2`,
+`(b) 3`,
+`(c) 4`,
+`(d) 5`,
 ],
-answer:0
+answer: 2
 },
 {
-q:`169. Which compound is used in fire extinguishers?`,
-options:[
-`(a) CO₂`,
-`(b) O₂`,
-`(c) H₂`,
-`(d) N₂`
+q: `35. Which of the following biphenyls is optically active? [two structures shown]`,
+options: [
+`(a) Structure (a)`,
+`(b) Structure (b)`,
 ],
-answer:0
+answer: 1
 },
 {
-q:`170. Which compound is used in preparation of rayon?`,
-options:[
-`(a) Cellulose`,
-`(b) Nylon`,
-`(c) PVC`,
-`(d) Bakelite`
+q: `36. The Correct statement regarding the comparison of staggered and eclipsed conformation of ethane is?`,
+options: [
+`(a) The eclipsed conformation of ethane is more stable than staggered because it has no torsional strain.`,
+`(b) The eclipsed conformation of ethene is more stable than staggered even though it has torsional strain.`,
+`(c) The staggered conformation of ethane is less stable than eclipsed because staggered has torsional strain.`,
+`(d) The staggered conformation of ethane is more stable than eclipsed because staggered has no torsional strain.`,
 ],
-answer:0
+answer: 3
 },
 {
-q:`171. Which vitamin is fat soluble?`,
-options:[
-`(a) Vitamin A`,
-`(b) Vitamin C`,
-`(c) Vitamin B`,
-`(d) Vitamin B₁₂`
+q: `37. In which of the following molecules all atoms are co-planar?`,
+options: [
+`(a) Cyclobutane`,
+`(b) Biphenyl`,
+`(c) (CH₃)₂C=C(CN)₂`,
+`(d) Biphenyl connected`,
 ],
-answer:0
+answer: 1
 },
 {
-q:`172. Which compound is used in photography?`,
-options:[
-`(a) Silver bromide`,
-`(b) NaCl`,
-`(c) KCl`,
-`(d) CaCl₂`
+q: `38. Which among the given molecules can exhibit Tautomerism? [three structures]`,
+options: [
+`(a) 3 Only`,
+`(b) Both 1 and 2`,
+`(c) Both 1 and 2`,
+`(d) Both 2 and 3`,
 ],
-answer:0
+answer: 0
 },
 {
-q:`173. Which gas is produced during anaerobic respiration?`,
-options:[
-`(a) CO₂`,
-`(b) O₂`,
-`(c) H₂`,
-`(d) N₂`
+q: `39. The IUPAC name of the compound [HC- with keto and ene groups structure]`,
+options: [
+`(a) 5-formylhex-2-en-3-one`,
+`(b) 5-methyl-4-oxohex-2-en-5-al`,
+`(c) 3-keto-2-methylhex-5-enal`,
+`(d) 3-keto-2-methylhex-4-enal`,
 ],
-answer:0
+answer: 3
 },
 {
-q:`174. Which compound is used as disinfectant?`,
-options:[
-`(a) Bleaching powder`,
-`(b) Methane`,
-`(c) Ethane`,
-`(d) Propane`
+q: `40. Which of the following molecules represents the order of hybridisation sp², sp³, sp, sp from left to right atoms?`,
+options: [
+`(a) CH₂=CH-CH=CH₂`,
+`(b) CH₂=CH-C≡CH`,
+`(c) HC≡C-C≡CH`,
+`(d) CH₃-CH=CH-CH₃`,
 ],
-answer:0
+answer: 0
 },
-{
-q:`175. Which compound is used in vulcanization of rubber?`,
-options:[
-`(a) Sulphur`,
-`(b) Oxygen`,
-`(c) Nitrogen`,
-`(d) Hydrogen`
-],
-answer:0
-},
-{
-q:`176. Which compound is used in preparation of PVC?`,
-options:[
-`(a) Vinyl chloride`,
-`(b) Ethane`,
-`(c) Methane`,
-`(d) Propane`
-],
-answer:0
-},
-{
-q:`177. Which compound is used as fuel in LPG?`,
-options:[
-`(a) Propane and butane`,
-`(b) Methane`,
-`(c) Ethene`,
-`(d) Benzene`
-],
-answer:0
-},
-{
-q:`178. Which compound is used in preparation of urea?`,
-options:[
-`(a) Ammonia`,
-`(b) Oxygen`,
-`(c) Nitrogen`,
-`(d) Hydrogen`
-],
-answer:0
-},
-{
-q:`179. Which compound is used in preparation of nitric acid?`,
-options:[
-`(a) Ammonia`,
-`(b) Methane`,
-`(c) Ethane`,
-`(d) Propane`
-],
-answer:0
-},
-{
-q:`180. Which compound is used in Haber process?`,
-options:[
-`(a) Nitrogen and hydrogen`,
-`(b) Oxygen`,
-`(c) Carbon dioxide`,
-`(d) Methane`
-],
-answer:0
-},
-{
-q:`181. Which compound is used as bleaching agent?`,
-options:[
-`(a) SO₂`,
-`(b) CO₂`,
-`(c) O₂`,
-`(d) N₂`
-],
-answer:0
-},
-{
-q:`182. Which compound is used in preparation of glass?`,
-options:[
-`(a) Silica`,
-`(b) Methane`,
-`(c) Ethane`,
-`(d) Propane`
-],
-answer:0
-},
-{
-q:`183. Which compound is used in preparation of cement?`,
-options:[
-`(a) Limestone`,
-`(b) Methane`,
-`(c) Ethane`,
-`(d) Propane`
-],
-answer:0
-},
-{
-q:`184. Which compound is used in preparation of washing soda?`,
-options:[
-`(a) Na₂CO₃`,
-`(b) NaCl`,
-`(c) NaOH`,
-`(d) KCl`
-],
-answer:0
-},
-{
-q:`185. Which compound is used in preparation of baking soda?`,
-options:[
-`(a) NaHCO₃`,
-`(b) NaCl`,
-`(c) KCl`,
-`(d) NaOH`
-],
-answer:0
-},
-{
-q:`186. Which compound is used in preparation of plaster of Paris?`,
-options:[
-`(a) CaSO₄·½H₂O`,
-`(b) CaCO₃`,
-`(c) CaO`,
-`(d) CaCl₂`
-],
-answer:0
-}
+
 ];
-  function loadQuiz(){
-    const quiz = document.getElementById("quiz");
-    quizData.forEach((item,index)=>{
-        let questionDiv = document.createElement("div");
-        questionDiv.classList.add("question");
 
-        let questionTitle = document.createElement("h3");
-        questionTitle.innerHTML = item.q;
-        questionDiv.appendChild(questionTitle);
+function loadQuiz(){
+const quiz = document.getElementById("quiz");
 
-        item.options.forEach((opt,i)=>{
-            let optionDiv = document.createElement("div");
-            optionDiv.classList.add("option");
-            optionDiv.innerHTML = opt;
+quizData.forEach((item,index)=>{
+    const div = document.createElement("div");
+    div.classList.add("question");
+    div.innerHTML = "<h3>"+item.q+"</h3>";
 
-            optionDiv.onclick = function(){
-                let siblings = optionDiv.parentElement.querySelectorAll(".option");
-                siblings.forEach(s=>s.classList.remove("correct","wrong"));
+    item.options.forEach((opt,i)=>{
+        const option = document.createElement("div");
+        option.classList.add("option");
+        option.innerHTML = opt;
 
-                if(i === item.answer){
-                    optionDiv.classList.add("correct");
-                } else {
-                    optionDiv.classList.add("wrong");
-                }
-            };
+        option.onclick = function(){
+            if(option.classList.contains("correct") || option.classList.contains("wrong")) return;
 
-            questionDiv.appendChild(optionDiv);
-        });
+            if(i === item.answer){
+                option.classList.add("correct");
+            } else {
+                option.classList.add("wrong");
+                div.querySelectorAll(".option")[item.answer].classList.add("correct");
+            }
+        };
 
-        quiz.appendChild(questionDiv);
+        div.appendChild(option);
     });
+
+    quiz.appendChild(div);
+});
 }
 
 function calculateScore(){
-    let score = 0;
-    const questions = document.querySelectorAll(".question");
+let score = 0;
+const questions = document.querySelectorAll(".question");
 
-    questions.forEach((q,index)=>{
-        const selected = q.querySelector(".correct");
-        if(selected) score++;
-    });
+questions.forEach((q,index)=>{
+    const correctIndex = quizData[index].answer;
+    if(q.querySelectorAll(".option")[correctIndex].classList.contains("correct")){
+        score++;
+    }
+});
 
-    document.getElementById("scoreBox").innerHTML =
-        "Your Score: " + score + " / " + quizData.length;
+document.getElementById("scoreBox").innerHTML =
+"Your Score: " + score + " / " + quizData.length;
 }
 
 loadQuiz();
