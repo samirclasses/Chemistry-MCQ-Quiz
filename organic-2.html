@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Organic Chemistry HOTS Quiz - JEE Main</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      margin: 20px;
+    }
+    h1,h2 {
+      text-align: center;
+      color: #333;
+    }
+    .quiz-container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .question {
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+    .options label {
+      display: block;
+      margin: 5px 0;
+      cursor: pointer;
+    }
+    #submit {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #result {
+      text-align: center;
+      font-size: 1.2em;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<h2>Apex Chemistry
+  <h1>Organic Chemistry Quiz</h1>
+  <div class="quiz-container" id="quiz"></div>
+  <button id="submit">Submit Quiz</button>
+  <div id="result"></div>
+
+  <script>
+    const quizData = [
+      {question: "Which intermediate is formed in the Cannizzaro reaction?", options: ["Carbocation", "Carbanion", "Free radical", "Carbene"], answer: "Carbanion"},
+      {question: "Which of the following compounds shows tautomerism?", options: ["Acetone", "Phenol", "Acetylacetone", "Methane"], answer: "Acetylacetone"},
+      {question: "In electrophilic substitution of benzene, the rate is highest for:", options: ["Nitrobenzene", "Toluene", "Benzene", "Chlorobenzene"], answer: "Toluene"},
+      {question: "Which reagent converts primary alcohols to aldehydes selectively?", options: ["KMnO4", "PCC", "H2SO4", "NaBH4"], answer: "PCC"},
+      {question: "Which of the following is most acidic?", options: ["Phenol", "Cyclohexanol", "Ethanol", "Methanol"], answer: "Phenol"},
+      {question: "Which of the following undergoes nucleophilic substitution most easily?", options: ["Vinyl chloride", "Allyl chloride", "Ethyl chloride", "Chlorobenzene"], answer: "Allyl chloride"},
+      {question: "Which of the following is aromatic?", options: ["Cyclooctatetraene dianion", "Cyclobutadiene", "Cyclohexane", "Cyclopentadiene"], answer: "Cyclooctatetraene dianion"},
+      {question: "Which of the following is used in the Rosenmund reduction?", options: ["Pd/BaSO4", "Ni catalyst", "Zn/HCl", "LiAlH4"], answer: "Pd/BaSO4"},
+      {question: "Which of the following has the highest boiling point?", options: ["Butane", "Butanol", "Butanal", "Butene"], answer: "Butanol"},
+      {question: "Which of the following is optically active?", options: ["2-Butanol", "2-Propanol", "Butane", "Acetone"], answer: "2-Butanol"},
+      {question: "Which of the following is formed in Kolbe’s reaction?", options: ["Salicylic acid", "Benzoic acid", "Phenol", "Aniline"], answer: "Salicylic acid"},
+      {question: "Which of the following is most reactive towards electrophilic substitution?", options: ["Aniline", "Nitrobenzene", "Benzene", "Chlorobenzene"], answer: "Aniline"},
+      {question: "Which of the following is used in the Wurtz reaction?", options: ["Na metal", "Mg metal", "Zn metal", "Al metal"], answer: "Na metal"},
+      {question: "Which of the following is formed in the Hoffmann bromamide reaction?", options: ["Primary amine", "Secondary amine", "Tertiary amine", "Amide"], answer: "Primary amine"},
+      {question: "Which of the following is most stable?", options: ["Benzyl radical", "Methyl radical", "Ethyl radical", "Vinyl radical"], answer: "Benzyl radical"},
+      {question: "Which of the following is used in the detection of unsaturation?", options: ["Baeyer's test (KMnO4)", "Fehling’s solution", "Tollen’s reagent", "Iodoform test"], answer: "Baeyer's test (KMnO4)"},
+      {question: "Which of the following is formed in the ozonolysis of alkenes?", options: ["Alcohols", "Aldehydes/Ketones", "Carboxylic acids", "Esters"], answer: "Aldehydes/Ketones"},
+      {question: "Which of the following is most basic?", options: ["Aniline", "Ammonia", "Pyridine", "p-Nitroaniline"], answer: "Ammonia"},
+      {question: "Which of the following is used in the Friedel-Crafts reaction?", options: ["AlCl3", "FeCl3", "ZnCl2", "CuCl2"], answer: "AlCl3"},
+      {question: "Which of the following is formed in the Cannizzaro reaction?", options: ["Alcohol + Acid", "Alcohol + Aldehyde", "Ketone + Acid", "Alcohol + Ketone"], answer: "Alcohol + Acid"},
+      {question: "Which of the following is most reactive towards nucleophiles?", options: ["Acyl chloride", "Ester", "Amide", "Anhydride"], answer: "Acyl chloride"},
+      {question: "Which of the following is used in the detection of carbonyl group?", options: ["2,4-DNP", "Fehling’s solution", "Tollen’s reagent", "All of these"], answer: "All of these"},
+      {question: "Which of the following is formed in the Clemmensen reduction?", options: ["Alkane", "Alcohol", "Aldehyde", "Ketone"], answer: "Alkane"},
+      {question: "Which of the following is most reactive towards electrophiles?", options: ["Phenol", "Benzene", "Nitrobenzene", "Toluene"], answer: "Phenol"},
+      {question: "Which of the following is used in the detection of phenol?", options: ["Ferric chloride", "KMnO4", "NaOH", "HCl"], answer: "Ferric chloride"}
+    ];
+
+    const quizContainer = document.getElementById("quiz");
+    const resultContainer = document.getElementById("result");
+    const submitButton = document.getElementById("submit");
+
+    function buildQuiz() {
+      quizData.forEach((q, index) => {
+        const questionElement = document.createElement("div");
+        questionElement.classList.add("question");
+        questionElement.innerText = (index + 1) + ". " + q.question;
+
+        const optionsElement = document.createElement("div");
+        optionsElement.classList.add("options");
+
+        q.options.forEach(option => {
+          const label = document.createElement("label");
+          const input = document.createElement("input");
+          input.type = "radio";
+          input.name = "question" + index;
+          input.value = option;
+          label.appendChild(input);
+          label.appendChild(document.createTextNode(option));
+          optionsElement.appendChild(label);
+        });
+
+        quizContainer.appendChild(questionElement);
+        quizContainer.appendChild(optionsElement);
+      });
+    }
+
+    function showResults() {
+      let score = 0;
+      quizData.forEach((q, index) => {
+        const selected = document.querySelector('input[name="question' + index + '"]:checked');
+        if (selected && selected.value === q.answer) {
+          score++;
+        }
+      });
+      resultContainer.innerText = "You scored " + score + " out of " + quizData.length;
+    }
+
+    buildQuiz();
+    submitButton.addEventListener("click", showResults);
+  </script>
+</body>
+</html>
